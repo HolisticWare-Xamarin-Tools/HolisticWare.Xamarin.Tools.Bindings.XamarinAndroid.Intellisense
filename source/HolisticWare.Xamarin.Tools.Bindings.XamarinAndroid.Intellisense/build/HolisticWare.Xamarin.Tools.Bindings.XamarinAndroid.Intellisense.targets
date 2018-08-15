@@ -1,0 +1,35 @@
+﻿<!--
+  NuGet automatically imports this file into any project that has a PackageReference to 'SampleTasks'.
+  To see this in action, execute "dotnet restore" on the 3-NuGet example and look in the obj/ folder for
+  a file named Web.csproj.g.nuget.targets. You'll see inside that it contains an "Import" to this file.
+ -->
+<Project>
+
+    <PropertyGroup>  
+        <BindingsHelperFolder>.\hwolisticware-generated\</BindingsHelperFolder>  
+        <BindningApiXml>.\obj\$(Configuration)\api.xml</BindningApiXml>  
+    </PropertyGroup>  
+     <ItemGroup>
+        <BindningSourceFiles Include="$(IntermediateOutputPath)\generated\src\*"></BindningSourceFiles>  
+        <Compile Include="$(BindingsHelperFolder)\*.cs" />
+    </ItemGroup>
+    <Target Name="BindingsHelpersClean" AfterTargets="Clean;BeforeBuild">  
+        <RemoveDir Directories="$(BindingsHelperFolder)" />  
+    </Target>  
+    <Target Name="BindingsHelpersPrepare" AfterTargets="BeforeCompile">  
+        <MakeDir Directories="$(BindingsHelperFolder)" />
+        <Copy SourceFiles="$(BindningApiXml)" DestinationFolder="$(BindingsHelperFolder)/" />  
+        <CreateItem Include="$(IntermediateOutputPath)\generated\src\*.cs">
+          <Output TaskParameter="Include" ItemName="BindingsCSharpFiles"/>
+        </CreateItem>
+        <Move SourceFiles="@(BindingsCSharpFiles)" DestinationFolder="$(BindingsHelperFolder)\" />
+        
+    </Target>
+  <ItemGroup>
+        <Folder Include="$(BindingsHelperFolder)" />
+        <Compile Include="$(BindingsHelperFolder)\*.cs">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Compile>
+  </ItemGroup>
+    
+</Project>
