@@ -83,8 +83,8 @@
         <RemoveDir Directories="$(BindingsHelperFolder)" />  
     </Target>
     
-    <Target Name="BindingsHelpersPrepare" BeforeTargets="Compile">  
-        <Message Text="mc++ AfterTargets=Compile" />  
+    <Target Name="BindingsHelpersPrepare" BeforeTargets="BindningSourceFiles">  
+        <Message Text="mc++ AfterTargets=BindningSourceFiles" />  
         <RemoveDir Directories="$(BindingsHelperFolder)" />  
         <Message Text="mc++ BeforeTargets=Compile" />  
         <MakeDir Directories="$(BindingsHelperFolder)" />
@@ -103,12 +103,16 @@
             text_replacement="MSBuildThisFileDirectory)\\\\..\\\\..\\\\$(BindingsHelperFolder)"
             >            
         </ReplaceFileText>
+        
+        <CreateItem Include="$(BindingsHelperFolder)\*.cs">
+          <Output TaskParameter="Include" ItemName="BindingsCSharpFilesMoved"/>
+        </CreateItem>
+        <ItemGroup>
+            <Folder Include="$(BindingsHelperFolder)" />
+            <Compile Include="$(BindingsHelperFolder)\*.cs">
+                <Visible>true</Visible>
+            </Compile>
+        </ItemGroup>
+        
     </Target>
-  <ItemGroup>
-        <Folder Include="$(BindingsHelperFolder)" />
-        <Compile Include="$(BindingsHelperFolder)\*.cs">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </Compile>
-  </ItemGroup>
-    
 </Project>

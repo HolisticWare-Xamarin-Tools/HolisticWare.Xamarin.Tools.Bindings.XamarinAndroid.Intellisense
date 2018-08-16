@@ -27,7 +27,37 @@
     <TargetFrameworks Condition="'$(OS)' != 'Windows_NT'">netstandard1.3</TargetFrameworks>
   </PropertyGroup>
 
-
+    
+    <PropertyGroup>
+        <!-- 
+        nuget packaging
+        -->
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense</PackageId>
+        <PackageVersion>$(Version)</PackageVersion>
+        <Title>Xamarin.Grpc.Stub</Title>
+        <Summary>
+            HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense
+        </Summary>
+        <Description>
+            HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense
+        </Description>
+        <Owners>HolisticWare</Owners>
+        <Authors>HolisticWare</Authors>
+        <Copyright>2018</Copyright>
+        <PackageLicenseUrl>
+        </PackageLicenseUrl>
+        <PackageProjectUrl>
+        </PackageProjectUrl>
+        <RepositoryUrl>
+        </RepositoryUrl>
+        <PackageReleaseNotes>
+        </PackageReleaseNotes>
+        <PackageIconUrl>
+            
+        </PackageIconUrl>
+        <PackageTags>xamarin, android, bindings, google, grpc, stub </PackageTags>
+    </PropertyGroup>
     
   <ItemGroup>
     <!--
