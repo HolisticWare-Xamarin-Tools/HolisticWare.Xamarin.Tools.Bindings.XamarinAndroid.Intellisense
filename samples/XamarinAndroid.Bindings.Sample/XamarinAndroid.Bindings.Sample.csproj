@@ -61,5 +61,5 @@
     </EmbeddedJar>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
-  <Import Project="..\packages\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.0.0.1-alpha-20180815232048\build\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.targets" Condition="Exists('..\packages\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.0.0.1-alpha-20180815232048\build\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.targets')" />
+  <Import Project="..\packages\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.0.0.1-alpha-20180816081320\build\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.targets" Condition="Exists('..\packages\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.0.0.1-alpha-20180816081320\build\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.targets')" />
 </Project>
