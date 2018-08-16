@@ -8,6 +8,41 @@
       <ParameterGroup>
         <InputFilename ParameterType="System.String" Required="true" />
         <OutputFilename ParameterType="System.String" Required="true" />
+        <text_replacing ParameterType="System.String" Required="true" />
+        <text_replacement ParameterType="System.String" Required="true" />
+      </ParameterGroup>
+      <Task>
+        <Reference Include="System.Core" />
+        <Using Namespace="System" />
+        <Using Namespace="System.IO" />
+        <Using Namespace="System.Text.RegularExpressions" />
+        <Code Type="Fragment" Language="cs">
+          <![CDATA[
+                string content = File.ReadAllText(InputFilename);
+                File.WriteAllText
+                    (
+                        OutputFilename,
+                        content
+                            .Replace
+                                (
+                                    text_replacing, 
+                                    text_replacement
+                                )
+                            .Replace
+                                (
+                                    "////", 
+                                    @"\"
+                                )
+                    );
+              ]]>
+        </Code>
+      </Task>
+    </UsingTask>
+    
+     <UsingTask TaskName="ReplaceFileTextRegex" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
+      <ParameterGroup>
+        <InputFilename ParameterType="System.String" Required="true" />
+        <OutputFilename ParameterType="System.String" Required="true" />
         <MatchExpression ParameterType="System.String" Required="true" />
         <ReplacementText ParameterType="System.String" Required="true" />
       </ParameterGroup>
@@ -21,7 +56,8 @@
                 File.WriteAllText
                     (
                         OutputFilename,
-                        Regex.Replace
+                        Regex
+                            .Replace
                                 (
                                     File.ReadAllText(InputFilename), 
                                     MatchExpression, 
@@ -32,19 +68,25 @@
         </Code>
       </Task>
     </UsingTask>
-    
+
     <PropertyGroup>  
-        <BindingsHelperFolder>.\hwolisticware-generated\</BindingsHelperFolder>  
-        <BindningApiXml>.\obj\$(Configuration)\api.xml</BindningApiXml>  
+        <BindingsHelperFolder>hwolisticware-generated</BindingsHelperFolder>  
+        <BindningApiXml>$(IntermediateOutputPath)\api.xml</BindningApiXml>  
     </PropertyGroup>  
      <ItemGroup>
         <BindningSourceFiles Include="$(IntermediateOutputPath)\generated\src\*"></BindningSourceFiles>  
         <Compile Include="$(BindingsHelperFolder)\*.cs" />
     </ItemGroup>
-    <Target Name="BindingsHelpersClean" AfterTargets="Clean;BeforeBuild">  
+    
+    <Target Name="BindingsHelpersClean" AfterTargets="Clean">  
+        <Message Text="mc++ AfterTargets=Clean" />  
         <RemoveDir Directories="$(BindingsHelperFolder)" />  
-    </Target>  
-    <Target Name="BindingsHelpersPrepare" AfterTargets="BeforeCompile">  
+    </Target>
+    
+    <Target Name="BindingsHelpersPrepare" BeforeTargets="Compile">  
+        <Message Text="mc++ AfterTargets=Compile" />  
+        <RemoveDir Directories="$(BindingsHelperFolder)" />  
+        <Message Text="mc++ BeforeTargets=Compile" />  
         <MakeDir Directories="$(BindingsHelperFolder)" />
         <Copy SourceFiles="$(BindningApiXml)" DestinationFolder="$(BindingsHelperFolder)/" />  
         <CreateItem Include="$(IntermediateOutputPath)\generated\src\*.cs">
@@ -57,8 +99,8 @@
         <ReplaceFileText 
             InputFilename="$(IntermediateOutputPath)\generated\src\$(MSBuildProjectName).projitems" 
             OutputFilename="$(IntermediateOutputPath)\generated\src\$(MSBuildProjectName).projitems" 
-            MatchExpression="MSBuildThisFileDirectory" 
-            ReplacementText="AAAAAAAAAAAAAAAAAAS"
+            text_replacing="MSBuildThisFileDirectory)" 
+            text_replacement="MSBuildThisFileDirectory)\\\\..\\\\..\\\\$(BindingsHelperFolder)"
             >            
         </ReplaceFileText>
     </Target>
