@@ -4,7 +4,35 @@
   a file named Web.csproj.g.nuget.targets. You'll see inside that it contains an "Import" to this file.
  -->
 <Project>
-
+    <UsingTask TaskName="ReplaceFileText" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
+      <ParameterGroup>
+        <InputFilename ParameterType="System.String" Required="true" />
+        <OutputFilename ParameterType="System.String" Required="true" />
+        <MatchExpression ParameterType="System.String" Required="true" />
+        <ReplacementText ParameterType="System.String" Required="true" />
+      </ParameterGroup>
+      <Task>
+        <Reference Include="System.Core" />
+        <Using Namespace="System" />
+        <Using Namespace="System.IO" />
+        <Using Namespace="System.Text.RegularExpressions" />
+        <Code Type="Fragment" Language="cs">
+          <![CDATA[
+                File.WriteAllText
+                    (
+                        OutputFilename,
+                        Regex.Replace
+                                (
+                                    File.ReadAllText(InputFilename), 
+                                    MatchExpression, 
+                                    ReplacementText
+                                )
+                    );
+              ]]>
+        </Code>
+      </Task>
+    </UsingTask>
+    
     <PropertyGroup>  
         <BindingsHelperFolder>.\hwolisticware-generated\</BindingsHelperFolder>  
         <BindningApiXml>.\obj\$(Configuration)\api.xml</BindningApiXml>  
@@ -23,7 +51,16 @@
           <Output TaskParameter="Include" ItemName="BindingsCSharpFiles"/>
         </CreateItem>
         <Move SourceFiles="@(BindingsCSharpFiles)" DestinationFolder="$(BindingsHelperFolder)\" />
-        
+
+        <Message Text="File = $(IntermediateOutputPath)\generated\src\$(MSBuildProjectName).projitems" />  
+
+        <ReplaceFileText 
+            InputFilename="$(IntermediateOutputPath)\generated\src\$(MSBuildProjectName).projitems" 
+            OutputFilename="$(IntermediateOutputPath)\generated\src\$(MSBuildProjectName).projitems" 
+            MatchExpression="MSBuildThisFileDirectory" 
+            ReplacementText="AAAAAAAAAAAAAAAAAAS"
+            >            
+        </ReplaceFileText>
     </Target>
   <ItemGroup>
         <Folder Include="$(BindingsHelperFolder)" />
