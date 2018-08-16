@@ -56,10 +56,10 @@
     <TransformFile Include="Transforms\Metadata.xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedJar Include="..\..\externals\android\grpc-netty-1.14.0.jar">
-      <Link>Jars\grpc-netty-1.14.0.jar</Link>
+    <EmbeddedJar Include="..\..\externals\android\grpc-stub-1.14.0.jar">
+      <Link>Jars\grpc-stub-1.14.0.jar</Link>
     </EmbeddedJar>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
-  <Import Project="..\packages\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.0.0.1-alpha-20180816081320\build\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.targets" Condition="Exists('..\packages\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.0.0.1-alpha-20180816081320\build\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.targets')" />
+  <Import Project="..\packages\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.0.0.1-alpha-20180816125414\build\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.targets" Condition="Exists('..\packages\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.0.0.1-alpha-20180816125414\build\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.targets')" />
 </Project>
