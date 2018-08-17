@@ -6,8 +6,8 @@
 <Project>
     <UsingTask TaskName="ReplaceFileText" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
       <ParameterGroup>
-        <InputFilename ParameterType="System.String" Required="true" />
-        <OutputFilename ParameterType="System.String" Required="true" />
+        <filename_input ParameterType="System.String" Required="true" />
+        <filename_output ParameterType="System.String" Required="true" />
         <text_replacing ParameterType="System.String" Required="true" />
         <text_replacement ParameterType="System.String" Required="true" />
       </ParameterGroup>
@@ -18,10 +18,10 @@
         <Using Namespace="System.Text.RegularExpressions" />
         <Code Type="Fragment" Language="cs">
           <![CDATA[
-                string content = File.ReadAllText(InputFilename);
+                string content = File.ReadAllText(filename_input);
                 File.WriteAllText
                     (
-                        OutputFilename,
+                        filename_output,
                         content
                             .Replace
                                 (
@@ -41,10 +41,10 @@
     
      <UsingTask TaskName="ReplaceFileTextRegex" TaskFactory="CodeTaskFactory" AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.v4.0.dll">
       <ParameterGroup>
-        <InputFilename ParameterType="System.String" Required="true" />
-        <OutputFilename ParameterType="System.String" Required="true" />
-        <MatchExpression ParameterType="System.String" Required="true" />
-        <ReplacementText ParameterType="System.String" Required="true" />
+        <filename_input ParameterType="System.String" Required="true" />
+        <filename_output ParameterType="System.String" Required="true" />
+        <match_regex ParameterType="System.String" Required="true" />
+        <text_replacement ParameterType="System.String" Required="true" />
       </ParameterGroup>
       <Task>
         <Reference Include="System.Core" />
@@ -55,13 +55,13 @@
           <![CDATA[
                 File.WriteAllText
                     (
-                        OutputFilename,
+                        filename_output,
                         Regex
                             .Replace
                                 (
-                                    File.ReadAllText(InputFilename), 
-                                    MatchExpression, 
-                                    ReplacementText
+                                    File.ReadAllText(filename_input), 
+                                    match_regex, 
+                                    text_replacement
                                 )
                     );
               ]]>
@@ -82,8 +82,30 @@
         <Message Text="mc++ AfterTargets=Clean" />  
         <RemoveDir Directories="$(BindingsHelperFolder)" />  
     </Target>
+
+
+    <!--
+    Copying/moving MCWs (Managed Callable Wrappers) from 
+
+        obj/generated/src/*.cs 
+        $(IntermediateOutputPath)\generated\src\*.cs
+
+    to $(BindingsHelperFolder.
     
-    <Target Name="BindingsHelpersPrepare" BeforeTargets="BindningSourceFiles">  
+    Need to inject it before:
+
+    Target "AddBindingsToCompile" 
+    in file 
+    "/Library/Frameworks/Mono.framework/External/xbuild/Xamarin/Android/Xamarin.Android.Bindings.targets" 
+    from project 
+    "/Projects/hw-tools/HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense/samples/XamarinAndroid.Bindings.Sample/XamarinAndroid.Bindings.Sample.csproj" 
+    (target "ResolveReferences" depends on it):
+    -->
+    <Target 
+        Name="BindingsHelpersPrepare" 
+        BeforeTargets="AddBindingsToCompile"
+        >  
+
         <Message Text="mc++ AfterTargets=BindningSourceFiles" />  
         <RemoveDir Directories="$(BindingsHelperFolder)" />  
         <Message Text="mc++ BeforeTargets=Compile" />  
@@ -97,8 +119,8 @@
         <Message Text="File = $(IntermediateOutputPath)\generated\src\$(MSBuildProjectName).projitems" />  
 
         <ReplaceFileText 
-            InputFilename="$(IntermediateOutputPath)\generated\src\$(MSBuildProjectName).projitems" 
-            OutputFilename="$(IntermediateOutputPath)\generated\src\$(MSBuildProjectName).projitems" 
+            filename_input="$(IntermediateOutputPath)\generated\src\$(MSBuildProjectName).projitems" 
+            filename_output="$(IntermediateOutputPath)\generated\src\$(MSBuildProjectName).projitems" 
             text_replacing="MSBuildThisFileDirectory)" 
             text_replacement="MSBuildThisFileDirectory)\\\\..\\\\..\\\\$(BindingsHelperFolder)"
             >            
@@ -115,4 +137,55 @@
         </ItemGroup>
         
     </Target>
+
+    <!--
+    Decompiling with JavaP
+    https://github.com/moljac/HolisticWare.WebSite.CompositeC1.Content.MarkDown/blob/master/xamarin/products/xamarin-platform/traditional-standard/xamarin-android/advanced/bindings/java-bindings/analysis-java-binaries-jars-decompiling.md
+    
+    javap \
+        -classpath ../../../../externals/android/grpc-stub-1.14.0.jar \
+            $(jar -tf ../../../../externals/android/grpc-stub-1.14.0.jar | grep "class$" | sed s/\.class$//) \
+            >> grpc-stub-1.14.0.jar.class.java.txt
+
+    -->
+    <Target
+        Name="DecompileJavaProcyon" 
+        AfterTargets="Build"
+        >
+
+        <Message  Text="mc++ Decompile = $(Name)" />
+    </Target>
+    
+    <!--
+    Decompiling with Procyon
+    https://bitbucket.org/mstrobel/procyon/wiki/Java%20Decompiler
+
+    java \
+        -jar ./procyon-decompiler-0.5.30.jar \
+        -jar ../../../../externals/android/grpc-stub-1.14.0.jar \
+        dump/
+    -->
+    <Target
+        Name="DecompileJavaJavaP" 
+        AfterTargets="Build"
+        >
+        <Message  Text="mc++ Decompile = $(Name)" />
+    </Target>
+
+
+    <!--
+    Decompiling with CFR
+    http://www.benf.org/other/cfr/
+
+    java \
+        -jar ./cfr_0_132.jar \
+        -jar ../../../../externals/android/grpc-protobuf-lite-1.14.0.jar
+    -->
+    <Target
+        Name="DecompileJavaJavaP" 
+        AfterTargets="Build"
+        >
+        <Message  Text="mc++ Decompile = $(Name)" />
+    </Target>
+
 </Project>

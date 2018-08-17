@@ -3,39 +3,22 @@
   HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.csproj 
   -->
   <PropertyGroup>
-    <TargetFrameworks>netstandard1.6;net46</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <PackOnBuild>true</PackOnBuild>
   </PropertyGroup>
 
-  <!--
-  Project as a NuGet package.
-   -->
-  <PropertyGroup>
-    <VersionPrefix>0.0.1</VersionPrefix>
-    <VersionSuffix>alpha-$([System.DateTime]::Now.ToString('yyyyMMddHHmmss'))</VersionSuffix>
     <!--
-      This changes the default folder where assemblies will be placed in the package.
-      The default is 'lib', but that is incorrect since these assemblies are mean to be used
-      by MSBuild, and to meant to be referenced as API from the NuGet package.
+    Project as a NuGet package.
     -->
-    <BuildOutputTargetFolder>tools</BuildOutputTargetFolder>
-    <!-- For the sake of demoing, put the package output into a parent folder -->
-    <PackageOutputPath>/Users/moljac/nuget-local</PackageOutputPath>
-    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
-    <TargetFrameworks>netstandard1.3;net46</TargetFrameworks>
-    <!-- Compiling for .NET Framework on non-Windows systems is not yet supported-->
-    <TargetFrameworks Condition="'$(OS)' != 'Windows_NT'">netstandard1.3</TargetFrameworks>
-  </PropertyGroup>
-
-    
     <PropertyGroup>
         <!-- 
         nuget packaging
         -->
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense</PackageId>
-        <PackageVersion>$(Version)</PackageVersion>
-        <Title>Xamarin.Grpc.Stub</Title>
+        <Title>
+            HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense
+        </Title>
         <Summary>
             HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense
         </Summary>
@@ -45,18 +28,24 @@
         <Owners>HolisticWare</Owners>
         <Authors>HolisticWare</Authors>
         <Copyright>2018</Copyright>
-        <PackageLicenseUrl>
-        </PackageLicenseUrl>
-        <PackageProjectUrl>
-        </PackageProjectUrl>
         <RepositoryUrl>
         </RepositoryUrl>
-        <PackageReleaseNotes>
-        </PackageReleaseNotes>
-        <PackageIconUrl>
-            
-        </PackageIconUrl>
+        <VersionPrefix>0.0.1</VersionPrefix>
+        <VersionSuffix>alpha-$([System.DateTime]::Now.ToString('yyyyMMddHHmmss'))</VersionSuffix>
+        <PackageVersion>$(Version)</PackageVersion>
+        <!--
+          This changes the default folder where assemblies will be placed in the package.
+          The default is 'lib', but that is incorrect since these assemblies are mean to be used
+          by MSBuild, and to meant to be referenced as API from the NuGet package.
+        -->
+        <BuildOutputTargetFolder>tools</BuildOutputTargetFolder>
+        <!-- 
+        put the package output into a nuget test folder 
+        -->
+        <PackageOutputPath>/Users/moljac/nuget-local</PackageOutputPath>
+        <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
         <PackageTags>xamarin, android, bindings, google, grpc, stub </PackageTags>
+        <PackOnBuild>true</PackOnBuild>
     </PropertyGroup>
     
   <ItemGroup>
@@ -64,15 +53,25 @@
       PrivateAssets="All" is essential. This prevents these build-only dependencies
       from ending up in the NuGet package's list of dependencies.
      -->
-    <PackageReference Include="NETStandard.Library" Version="1.6.1" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.Build.Framework" Version="15.1.548" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.Build.Tasks.Core" Version="15.1.548" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="15.1.548" PrivateAssets="All" />
+    <PackageReference Include="NETStandard.Library" Version="2.0.3" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Build.Framework" Version="15.8.166" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Build.Tasks.Core" Version="15.8.166" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="15.8.166" PrivateAssets="All" />
   </ItemGroup>
 
     
   <ItemGroup>
     <Folder Include="build\" />
     <Content Include="build\**\*" PackagePath="build\" />
+    <Folder Include="content\" />
+    <Content Include="content\msbuild.rsp" PackagePath="\"/>
+    <Folder Include="content\lib\" />
+    <Content Include="content\lib\cfr_0_132.jar" />
+    <Content Include="content\lib\procyon-decompiler-0.5.30.jar" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="content\msbuild.rsp" />
+    <None Remove="content\lib\cfr_0_132.jar" />
+    <None Remove="content\lib\procyon-decompiler-0.5.30.jar" />
   </ItemGroup>
 </Project>
