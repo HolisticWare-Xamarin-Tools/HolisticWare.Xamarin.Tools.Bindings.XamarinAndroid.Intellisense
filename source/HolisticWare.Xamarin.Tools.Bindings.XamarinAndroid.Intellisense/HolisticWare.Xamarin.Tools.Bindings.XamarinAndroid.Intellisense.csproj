@@ -5,16 +5,23 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <PackOnBuild>true</PackOnBuild>
+    <EnableDefaultItems>false</EnableDefaultItems>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
     <!--
     Project as a NuGet package.
     -->
     <PropertyGroup>
+        <PackOnBuild>true</PackOnBuild>
+        <!-- 
+        put the package output into a nuget test folder 
+        -->
+        <PackageOutputPath>$(HOME)/nuget-local</PackageOutputPath>
+        
         <!-- 
         nuget packaging
         -->
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense</PackageId>
         <Title>
             HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense
@@ -39,13 +46,8 @@
           by MSBuild, and to meant to be referenced as API from the NuGet package.
         -->
         <BuildOutputTargetFolder>tools</BuildOutputTargetFolder>
-        <!-- 
-        put the package output into a nuget test folder 
-        -->
-        <PackageOutputPath>/Users/moljac/nuget-local</PackageOutputPath>
         <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
         <PackageTags>xamarin, android, bindings, google, grpc, stub </PackageTags>
-        <PackOnBuild>true</PackOnBuild>
     </PropertyGroup>
     
   <ItemGroup>
@@ -68,12 +70,6 @@
     <Content Include="holisticware-generated\.gitignore" />
     <Content Include="lib\cfr_0_132.jar" />
     <Content Include="lib\procyon-decompiler-0.5.30.jar" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Remove="content\msbuild.rsp" />
-    <None Remove="content\lib\.DS_Store" />
-    <None Remove="holisticware-generated\.gitignore" />
-    <None Remove="lib\cfr_0_132.jar" />
-    <None Remove="lib\procyon-decompiler-0.5.30.jar" />
+    <Content Include="msbuild.rsp" />
   </ItemGroup>
 </Project>

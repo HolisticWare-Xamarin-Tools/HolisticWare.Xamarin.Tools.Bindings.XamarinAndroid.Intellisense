@@ -70,6 +70,9 @@
     </UsingTask>
 
     <PropertyGroup>  
+        <!--
+        <EnableDefaultItems>false</EnableDefaultItems>
+        -->
         <BindingsHelperFolder>hwolisticware-generated</BindingsHelperFolder>  
         <BindningApiXml>$(IntermediateOutputPath)\api.xml</BindningApiXml>  
     </PropertyGroup>  
@@ -78,7 +81,10 @@
         <Compile Include="$(BindingsHelperFolder)\*.cs" />
     </ItemGroup>
     
-    <Target Name="BindingsHelpersClean" AfterTargets="Clean">  
+    <Target 
+        Name="BindingsHelpersClean" 
+        BeforeTargets="Build"
+        >  
         <Message Text="mc++ AfterTargets=Clean" />  
         <RemoveDir Directories="$(BindingsHelperFolder)" />  
     </Target>
@@ -116,9 +122,8 @@
         </CreateItem>
         <Move SourceFiles="@(BindingsCSharpFiles)" DestinationFolder="$(BindingsHelperFolder)\" />
 
-        <Message Text="File = $(IntermediateOutputPath)\generated\src\$(MSBuildProjectName).projitems" />  
-
         <ReplaceFileText 
+            Condition="'$(TargetFramework)' == ''"
             filename_input="$(IntermediateOutputPath)\generated\src\$(MSBuildProjectName).projitems" 
             filename_output="$(IntermediateOutputPath)\generated\src\$(MSBuildProjectName).projitems" 
             text_replacing="MSBuildThisFileDirectory)" 
@@ -126,6 +131,15 @@
             >            
         </ReplaceFileText>
         
+        <ReplaceFileText 
+            Condition="'$(TargetFramework)' == 'monoandroid81'"
+            filename_input="$(IntermediateOutputPath)\generated\src\$(MSBuildProjectName).projitems" 
+            filename_output="$(IntermediateOutputPath)\generated\src\$(MSBuildProjectName).projitems" 
+            text_replacing="MSBuildThisFileDirectory)" 
+            text_replacement="MSBuildThisFileDirectory)\\\\..\\\\..\\\\$(BindingsHelperFolder)"
+            >            
+        </ReplaceFileText>
+
         <CreateItem Include="$(BindingsHelperFolder)\*.cs">
           <Output TaskParameter="Include" ItemName="BindingsCSharpFilesMoved"/>
         </CreateItem>
