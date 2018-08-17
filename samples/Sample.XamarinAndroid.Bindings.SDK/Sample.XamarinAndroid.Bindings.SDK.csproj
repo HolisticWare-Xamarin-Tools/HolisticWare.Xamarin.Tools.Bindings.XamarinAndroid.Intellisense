@@ -70,7 +70,7 @@
 
   <ItemGroup>
     <PackageReference Include="MSBuild.Sdk.Extras" Version="1.4.0" PrivateAssets="All" />
-    <PackageReference Include="HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense" Version="0.0.1-alpha-20180817170324" />
+    <PackageReference Include="HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense" Version="0.0.1-alpha-20180817212755" />
   </ItemGroup>
 
   <ItemGroup>
@@ -80,12 +80,24 @@
   <ItemGroup>
     <None Remove="Jars\AboutJars.txt" />
     <None Remove="hw-generated\api.xml" />
+    <None Remove="hwolisticware-generated\api.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\externals\android\grpc-protobuf-lite-1.14.0.jar">
       <Link>Jars\grpc-protobuf-lite-1.14.0.jar</Link>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="hwolisticware-generated\IO.Grpc.Stub.Annotations.IRpcMethod.cs" />
+    <Compile Remove="hwolisticware-generated\IO.Grpc.Stub.Annotations.RpcMethodAttribute.cs" />
+    <Compile Remove="hwolisticware-generated\__NamespaceMapping__.cs" />
+  </ItemGroup>
   <Import Project="$(MSBuildSDKExtrasTargets)" Condition="Exists('$(MSBuildSDKExtrasTargets)')" />
-      
+
+
+    <Target Name="Dump" AfterTargets="Build">
+
+        <Message Text="mc++ %S(TargetFramework)" Importance="high"></Message>
+    </Target>
+
 </Project>
