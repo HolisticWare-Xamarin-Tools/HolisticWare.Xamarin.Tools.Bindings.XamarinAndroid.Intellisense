@@ -65,11 +65,8 @@
   <ItemGroup>
     <Folder Include="build\" />
     <Content Include="build\**\*" PackagePath="build\" />
-    <Folder Include="lib\" />
     <Folder Include="holisticware-generated\" />
     <Content Include="holisticware-generated\.gitignore" />
-    <Content Include="lib\cfr_0_132.jar" />
-    <Content Include="lib\procyon-decompiler-0.5.30.jar" />
     <Content Include="msbuild.rsp" />
   </ItemGroup>
   <ItemGroup>

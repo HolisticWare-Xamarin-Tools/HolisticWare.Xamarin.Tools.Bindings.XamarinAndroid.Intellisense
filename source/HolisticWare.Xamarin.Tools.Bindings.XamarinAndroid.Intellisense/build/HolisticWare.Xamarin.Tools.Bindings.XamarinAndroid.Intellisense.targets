@@ -30,6 +30,7 @@
                                 )
                             .Replace
                                 (
+                                    // TODO: check character escaping in MSBuild
                                     "////", 
                                     @"\"
                                 )
@@ -149,72 +150,7 @@
         <CreateItem Include="$(BindingsHelperFolder)\*.cs">
           <Output TaskParameter="Include" ItemName="BindingsCSharpFilesMoved"/>
         </CreateItem>
-        <ItemGroup>
-            <Folder Include="$(BindingsHelperFolder)" />
-            <Compile Include="$(BindingsHelperFolder)\*.cs">
-                <Visible>true</Visible>
-            </Compile>
-        </ItemGroup>
-        
-    </Target>
 
-    <!--
-    Decompiling with JavaP
-    https://github.com/moljac/HolisticWare.WebSite.CompositeC1.Content.MarkDown/blob/master/xamarin/products/xamarin-platform/traditional-standard/xamarin-android/advanced/bindings/java-bindings/analysis-java-binaries-jars-decompiling.md
-    
-    javap \
-        -classpath ../../../../externals/android/grpc-stub-1.14.0.jar \
-            $(jar -tf ../../../../externals/android/grpc-stub-1.14.0.jar | grep "class$" | sed s/\.class$//) \
-            >> grpc-stub-1.14.0.jar.class.java.txt
-
-                javap -classpath ../../../../externals/android/grpc-stub-1.14.0.jar \
-                        \$\(jar -tf ../../../../externals/android/grpc-stub-1.14.0.jar | grep &quot;class$&quot; | sed s/\.class$//\) \
-                        >> grpc-stub-1.14.0.jar.class.java.txt
-    -->
-    <Target
-        Name="DecompileJavaProcyon" 
-        AfterTargets="Build"
-        >
-
-        <Message  Text="mc++ Decompile = $(Name)" />
-        <Exec 
-            Command=
-                "
-    java -jar ./procyon-decompiler-0.5.30.jar -jar ../../../../externals/android/grpc-stub-1.14.0.jar dump/
-                "
-            /> 
     </Target>
     
-    <!--
-    Decompiling with Procyon
-    https://bitbucket.org/mstrobel/procyon/wiki/Java%20Decompiler
-
-    java \
-        -jar ./procyon-decompiler-0.5.30.jar \
-        -jar ../../../../externals/android/grpc-stub-1.14.0.jar \
-        dump/
-    -->
-    <Target
-        Name="DecompileJavaJavaP" 
-        AfterTargets="Build"
-        >
-        <Message  Text="mc++ Decompile = $(Name)" />
-    </Target>
-
-
-    <!--
-    Decompiling with CFR
-    http://www.benf.org/other/cfr/
-
-    java \
-        -jar ./cfr_0_132.jar \
-        -jar ../../../../externals/android/grpc-protobuf-lite-1.14.0.jar
-    -->
-    <Target
-        Name="DecompileJavaJavaP" 
-        AfterTargets="Build"
-        >
-        <Message  Text="mc++ Decompile = $(Name)" />
-    </Target>
-
 </Project>
