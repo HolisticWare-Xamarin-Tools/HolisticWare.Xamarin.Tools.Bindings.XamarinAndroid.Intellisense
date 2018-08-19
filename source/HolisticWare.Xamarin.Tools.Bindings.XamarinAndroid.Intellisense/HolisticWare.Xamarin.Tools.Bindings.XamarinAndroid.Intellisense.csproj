@@ -72,4 +72,11 @@
     <Content Include="lib\procyon-decompiler-0.5.30.jar" />
     <Content Include="msbuild.rsp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="content\msbuild.rsp" />
+    <None Remove="content\lib\.DS_Store" />
+    <None Remove="holisticware-generated\.gitignore" />
+    <None Remove="lib\cfr_0_132.jar" />
+    <None Remove="lib\procyon-decompiler-0.5.30.jar" />
+  </ItemGroup>
 </Project>

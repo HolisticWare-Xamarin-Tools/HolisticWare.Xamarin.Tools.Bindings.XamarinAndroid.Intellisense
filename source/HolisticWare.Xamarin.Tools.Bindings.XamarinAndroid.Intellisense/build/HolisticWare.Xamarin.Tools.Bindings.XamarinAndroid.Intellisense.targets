@@ -77,7 +77,13 @@
         <BindningApiXml>$(IntermediateOutputPath)\api.xml</BindningApiXml>  
     </PropertyGroup>  
      <ItemGroup>
-        <BindningSourceFiles Include="$(IntermediateOutputPath)\generated\src\*"></BindningSourceFiles>  
+        <!--
+        MCWs C# code is emitted to folowing folder:
+        $(IntermediateOutputPath = "obj/$(Configuration)/generated/src/"
+        $(IntermediateOutputPath = "obj/Debug/generated/src/"
+        $(IntermediateOutputPath = "obj/Release/generated/src/"
+        -->
+        <BindingMCWSourceFiles Include="$(IntermediateOutputPath)\generated\src\*"></BindingMCWSourceFiles>  
         <Compile Include="$(BindingsHelperFolder)\*.cs" />
     </ItemGroup>
     
@@ -112,7 +118,7 @@
         BeforeTargets="AddBindingsToCompile"
         >  
 
-        <Message Text="mc++ AfterTargets=BindningSourceFiles" />  
+        <Message Text="mc++ AfterTargets=BindingMCWSourceFiles" />  
         <RemoveDir Directories="$(BindingsHelperFolder)" />  
         <Message Text="mc++ BeforeTargets=Compile" />  
         <MakeDir Directories="$(BindingsHelperFolder)" />
@@ -161,6 +167,9 @@
             $(jar -tf ../../../../externals/android/grpc-stub-1.14.0.jar | grep "class$" | sed s/\.class$//) \
             >> grpc-stub-1.14.0.jar.class.java.txt
 
+                javap -classpath ../../../../externals/android/grpc-stub-1.14.0.jar \
+                        \$\(jar -tf ../../../../externals/android/grpc-stub-1.14.0.jar | grep &quot;class$&quot; | sed s/\.class$//\) \
+                        >> grpc-stub-1.14.0.jar.class.java.txt
     -->
     <Target
         Name="DecompileJavaProcyon" 
@@ -168,6 +177,12 @@
         >
 
         <Message  Text="mc++ Decompile = $(Name)" />
+        <Exec 
+            Command=
+                "
+    java -jar ./procyon-decompiler-0.5.30.jar -jar ../../../../externals/android/grpc-stub-1.14.0.jar dump/
+                "
+            /> 
     </Target>
     
     <!--
