@@ -48,10 +48,6 @@
   <ItemGroup>
     <None Include="Additions\AboutAdditions.txt" />
     <None Include="Jars\AboutJars.txt" />
-    <None Include="msbuild.rsp" />
-    <None Include="lib\procyon-decompiler-0.5.30.jar" />
-    <None Include="lib\cfr_0_132.jar" />
-    <None Include="holisticware-generated\.gitignore" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -65,5 +61,6 @@
     </EmbeddedJar>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
-  <Import Project="..\packages\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.0.0.1-alpha-20180817233057\build\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.targets" Condition="Exists('..\packages\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.0.0.1-alpha-20180817233057\build\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.targets')" />
+    
+  <Import Project="..\packages\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.0.0.1-alpha-20180817162020\build\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.targets" Condition="Exists('..\packages\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.0.0.1-alpha-20180817162020\build\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.targets')" />
 </Project>
