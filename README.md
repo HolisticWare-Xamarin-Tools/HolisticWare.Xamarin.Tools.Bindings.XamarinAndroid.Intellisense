@@ -36,6 +36,9 @@ so any kind of suggestions, ideas, constructive criticism is accepted.
 
 3.  uninstall nuget package after bindings are done
 
+NOTE: support for SDK style project is ongoing work due to lack of knowledge about file inclusion
+mechanisms (Default).
+
 ## Motivation
 
 This repository consists of the source for the build task in the `./source` folder and 2 bindings
@@ -111,3 +114,11 @@ and code navigation in the IDE.
 
 This solution is less than ideal, so next improvement was to add MSBuild task that injects that
 code automagically into the project.
+
+## TODOs
+
+1.	MSBuild SDK style project support 
+
+2. windows platform support 
+
+3.	more parameters for customization (output folders, ...)
