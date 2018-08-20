@@ -27,18 +27,23 @@
             HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense
         </Title>
         <Summary>
-            HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense
+            MSBuild targets/tasks to add intellisense (code [auto]completion) and navigation IDE 
+            support to Xamarin.Android bindings projects.
         </Summary>
         <Description>
-            HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense
+            MSBuild targets/tasks to add intellisense (code [auto]completion) and navigation IDE 
+            support to Xamarin.Android bindings projects.
         </Description>
         <Owners>HolisticWare</Owners>
         <Authors>HolisticWare</Authors>
         <Copyright>2018</Copyright>
         <RepositoryUrl>
+            https://github.com/moljac/HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense
         </RepositoryUrl>
         <VersionPrefix>0.0.1</VersionPrefix>
+        <!--
         <VersionSuffix>alpha-$([System.DateTime]::Now.ToString('yyyyMMddHHmmss'))</VersionSuffix>
+        -->
         <PackageVersion>$(Version)</PackageVersion>
         <!--
           This changes the default folder where assemblies will be placed in the package.
