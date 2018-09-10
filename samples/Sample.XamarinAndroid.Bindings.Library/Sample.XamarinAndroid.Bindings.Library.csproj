@@ -48,7 +48,7 @@
   <ItemGroup>
     <None Include="Additions\AboutAdditions.txt" />
     <None Include="Jars\AboutJars.txt" />
-    <None Include="msbuild.rsp" />
+    <None Include="holisticware-generated\intellisense\.gitignore" />
     <None Include="holisticware-generated\.gitignore" />
     <None Include="packages.config" />
   </ItemGroup>
@@ -64,5 +64,5 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
     
-  <Import Project="..\packages\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.0.0.1-alpha-20180819231716\build\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.targets" Condition="Exists('..\packages\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.0.0.1-alpha-20180819231716\build\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.targets')" />
+  <Import Project="..\packages\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.0.0.2-alpha-20180905183619\build\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.targets" Condition="Exists('..\packages\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.0.0.2-alpha-20180905183619\build\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.targets')" />
 </Project>
