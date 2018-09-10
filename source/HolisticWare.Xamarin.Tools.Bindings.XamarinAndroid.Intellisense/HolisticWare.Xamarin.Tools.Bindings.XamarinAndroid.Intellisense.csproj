@@ -40,10 +40,10 @@
         <RepositoryUrl>
             https://github.com/moljac/HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense
         </RepositoryUrl>
-        <VersionPrefix>0.0.1</VersionPrefix>
+        <VersionPrefix>0.0.2</VersionPrefix>
         <!--
-        <VersionSuffix>alpha-$([System.DateTime]::Now.ToString('yyyyMMddHHmmss'))</VersionSuffix>
         -->
+        <VersionSuffix>alpha-$([System.DateTime]::Now.ToString('yyyyMMddHHmmss'))</VersionSuffix>
         <PackageVersion>$(Version)</PackageVersion>
         <!--
           This changes the default folder where assemblies will be placed in the package.
@@ -52,7 +52,10 @@
         -->
         <BuildOutputTargetFolder>tools</BuildOutputTargetFolder>
         <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
-        <PackageTags>xamarin, android, bindings, google, grpc, stub </PackageTags>
+        <PackageTags>
+            holisticware, xamarin, android, bindings, tools, utilities, helpers, 
+            intellisense, autocomplete, mcw, managed callable wrappers 
+        </PackageTags>
     </PropertyGroup>
     
   <ItemGroup>
@@ -68,16 +71,20 @@
 
     
   <ItemGroup>
+    <Content Remove="msbuild.rsp" />
+    <Content Remove="holisticware-generated\intellisense\ %28copy%29.gitignore" />
+  </ItemGroup>
+  <ItemGroup>
     <Folder Include="build\" />
     <Content Include="build\**\*" PackagePath="build\" />
     <Folder Include="holisticware-generated\" />
+    <Folder Include="holisticware-generated\intellisense\" />
+    <Content Include="holisticware-generated\intellisense\.gitignore" />
     <Content Include="holisticware-generated\.gitignore" />
-    <Content Include="msbuild.rsp" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="content\msbuild.rsp" />
     <None Remove="content\lib\.DS_Store" />
-    <None Remove="holisticware-generated\.gitignore" />
     <None Remove="lib\cfr_0_132.jar" />
     <None Remove="lib\procyon-decompiler-0.5.30.jar" />
   </ItemGroup>

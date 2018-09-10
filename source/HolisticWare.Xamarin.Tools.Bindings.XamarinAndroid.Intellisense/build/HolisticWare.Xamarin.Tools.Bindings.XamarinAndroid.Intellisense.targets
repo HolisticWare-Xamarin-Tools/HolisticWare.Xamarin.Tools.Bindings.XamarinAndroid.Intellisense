@@ -74,7 +74,8 @@
         <!--
         <EnableDefaultItems>false</EnableDefaultItems>
         -->
-        <BindingsHelperFolder>hwolisticware-generated</BindingsHelperFolder>  
+        <BindingsHelperFolder>holisticware-generated</BindingsHelperFolder>  
+        <BindingsHelperFolderIntellisense>$(BindingsHelperFolder)/intellisense</BindingsHelperFolderIntellisense>  
         <BindningApiXml>$(IntermediateOutputPath)\api.xml</BindningApiXml>  
     </PropertyGroup>  
      <ItemGroup>
@@ -84,18 +85,22 @@
         $(IntermediateOutputPath = "obj/Debug/generated/src/"
         $(IntermediateOutputPath = "obj/Release/generated/src/"
         -->
-        <BindingMCWSourceFiles Include="$(IntermediateOutputPath)\generated\src\*"></BindingMCWSourceFiles>  
-        <Compile Include="$(BindingsHelperFolder)\*.cs" />
+        <BindingMCWSourceFiles Include="$(IntermediateOutputPath)/generated/src/*.cs"></BindingMCWSourceFiles>  
+        <Compile Include="$(BindingsHelperFolderIntellisense)/*.cs" />
     </ItemGroup>
     
     <Target 
         Name="BindingsHelpersClean" 
         BeforeTargets="Build"
         >  
-        <Message Text="mc++ AfterTargets=Clean" />  
-        <RemoveDir Directories="$(BindingsHelperFolder)" />  
+        <RemoveDir Directories="$(BindingsHelperFolderIntellisense)" />  
     </Target>
-
+    <!--
+    Refit repo
+    <ItemGroup Condition="Exists('$(IntermediateOutputPath)/generated/src/*.cs')">
+        <Compile Include="$(IntermediateOutputPath)/generated/src/*.cs" />
+    </ItemGroup>    
+    -->
 
     <!--
     Copying/moving MCWs (Managed Callable Wrappers) from 
@@ -103,7 +108,7 @@
         obj/generated/src/*.cs 
         $(IntermediateOutputPath)\generated\src\*.cs
 
-    to $(BindingsHelperFolder.
+    to $(BindingsHelperFolderIntellisense.
     
     Need to inject it before:
 
@@ -113,28 +118,37 @@
     from project 
     "/Projects/hw-tools/HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense/samples/XamarinAndroid.Bindings.Sample/XamarinAndroid.Bindings.Sample.csproj" 
     (target "ResolveReferences" depends on it):
+
+    
+        Condition=" '$(Sdk)'!='Microsoft.NET.Sdk' "         
+    
     -->
     <Target 
-        Name="BindingsHelpersPrepare" 
+        Name="BindingsHelpersPrepareClassicProject" 
         BeforeTargets="AddBindingsToCompile"
         >  
 
-        <Message Text="mc++ AfterTargets=BindingMCWSourceFiles" />  
-        <RemoveDir Directories="$(BindingsHelperFolder)" />  
-        <Message Text="mc++ BeforeTargets=Compile" />  
+        <RemoveDir Directories="$(BindingsHelperFolderIntellisense)" />  
+        <RemoveDir Directories="$(BindingsHelperFolder)" /> 
+        
         <MakeDir Directories="$(BindingsHelperFolder)" />
+        <MakeDir Directories="$(BindingsHelperFolderIntellisense)" />
+        
         <Copy SourceFiles="$(BindningApiXml)" DestinationFolder="$(BindingsHelperFolder)/" />  
         <CreateItem Include="$(IntermediateOutputPath)\generated\src\*.cs">
           <Output TaskParameter="Include" ItemName="BindingsCSharpFiles"/>
         </CreateItem>
-        <Move SourceFiles="@(BindingsCSharpFiles)" DestinationFolder="$(BindingsHelperFolder)\" />
+        <Move SourceFiles="@(BindingsCSharpFiles)" DestinationFolder="$(BindingsHelperFolderIntellisense)\" />
 
+        <Message Text="Files:"></Message>
+        <Message Text="    File: %(BindingsCSharpFiles.Identity)"></Message>
+        
         <ReplaceFileText 
             Condition="'$(TargetFramework)' == ''"
             filename_input="$(IntermediateOutputPath)\generated\src\$(MSBuildProjectName).projitems" 
             filename_output="$(IntermediateOutputPath)\generated\src\$(MSBuildProjectName).projitems" 
             text_replacing="MSBuildThisFileDirectory)" 
-            text_replacement="MSBuildThisFileDirectory)\\\\..\\\\..\\\\$(BindingsHelperFolder)"
+            text_replacement="MSBuildThisFileDirectory)\\\\..\\\\..\\\\$(BindingsHelperFolderIntellisense)"
             >            
         </ReplaceFileText>
         
@@ -143,14 +157,57 @@
             filename_input="$(IntermediateOutputPath)\generated\src\$(MSBuildProjectName).projitems" 
             filename_output="$(IntermediateOutputPath)\generated\src\$(MSBuildProjectName).projitems" 
             text_replacing="MSBuildThisFileDirectory)" 
-            text_replacement="MSBuildThisFileDirectory)\\\\..\\\\..\\\\$(BindingsHelperFolder)"
+            text_replacement="MSBuildThisFileDirectory)\\\\..\\\\..\\\\$(BindingsHelperFolderIntellisense)"
             >            
         </ReplaceFileText>
+        
+        
+        <CreateItem Include="$(BindingsHelperFolderIntellisense)\*.cs">
+          <Output TaskParameter="Include" ItemName="BindingsCSharpFilesMoved"/>
+        </CreateItem>
+        <Message Text="Files:"></Message>
+        <Message Text="    File: %(BindingsCSharpFilesMoved.Identity)"></Message>
 
+    </Target>
+    
+    <!--
+    <Target 
+        Name="BindingsHelpersPrepareSDKStyleProject" 
+        BeforeTargets="AddBindingsToCompile"
+        Condition=" '$(Sdk)'=='Microsoft.NET.Sdk' "         
+        >  
+
+        <RemoveDir Directories="$(BindingsHelperFolderIntellisense)" />  
+        <RemoveDir Directories="$(BindingsHelperFolder)" /> 
+        
+        <MakeDir Directories="$(BindingsHelperFolder)" />
+        <MakeDir Directories="$(BindingsHelperFolderIntellisense)" />
+
+        <Copy SourceFiles="$(BindningApiXml)" DestinationFolder="$(BindingsHelperFolderIntellisense)/" />  
+        <CreateItem Include="$(IntermediateOutputPath)\generated\src\*.cs">
+          <Output TaskParameter="Include" ItemName="BindingsCSharpFiles"/>
+        </CreateItem>
+        <Move SourceFiles="@(BindingsCSharpFiles)" DestinationFolder="$(BindingsHelperFolderIntellisense)\" />
+                
+        <Message Text="Files:"></Message>
+        <Message Text="    File: %(BindingsCSharpFiles.Identity)"></Message>
+        
+        <ReplaceFileText 
+            Condition="'$(TargetFramework)' == 'monoandroid81'"
+            filename_input="$(IntermediateOutputPath)\generated\src\$(MSBuildProjectName).projitems" 
+            filename_output="$(IntermediateOutputPath)\generated\src\$(MSBuildProjectName).projitems" 
+            text_replacing="MSBuildThisFileDirectory)" 
+            text_replacement="MSBuildThisFileDirectory)\\\\..\\\\..\\\\$(BindingsHelperFolderIntellisense)"
+            >            
+        </ReplaceFileText>
+        
         <CreateItem Include="$(BindingsHelperFolder)\*.cs">
           <Output TaskParameter="Include" ItemName="BindingsCSharpFilesMoved"/>
         </CreateItem>
-
+        
     </Target>
+    -->    
+    
+    
     
 </Project>
