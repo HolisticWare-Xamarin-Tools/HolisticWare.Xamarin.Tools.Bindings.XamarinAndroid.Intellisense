@@ -30,7 +30,19 @@ so any kind of suggestions, ideas, constructive criticism is accepted.
 
 ## Usage
 
-1.  install nuget package `HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense`
+1.  install nuget package 
+
+    `HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense`
+
+    via:
+
+    `Install-Package HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense`
+
+    `dotnet add package HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense`
+
+    `paket add HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense`
+
+    https://www.nuget.org/packages?q=HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Decompilers
 
 2.  do the bindings and enjoy code completion in MCW C# code
 
