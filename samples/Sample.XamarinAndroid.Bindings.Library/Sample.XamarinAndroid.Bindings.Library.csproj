@@ -57,11 +57,19 @@
     <TransformFile Include="Transforms\Metadata.xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedJar Include="..\..\externals\android\grpc-stub-1.14.0.jar">
-      <Link>Jars\grpc-stub-1.14.0.jar</Link>
-    </EmbeddedJar>
+    <LibraryProjectZip Include="..\..\externals\android\cronet-api-76.3809.111.aar">
+      <Link>Jars\cronet-api-76.3809.111.aar</Link>
+    </LibraryProjectZip>
   </ItemGroup>
+
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
+
+
+    <ItemGroup>
+        <None Include="$(IntermediateOutputPath)\api.xml" Condition=" Exists('$(IntermediateOutputPath)\api.xml') " />            
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="$(IntermediateOutputPath)\generated\src\*.cs" Condition=" Exists('$(IntermediateOutputPath)\generated\src\*.cs') " />    
+    </ItemGroup>
     
-  <Import Project="..\packages\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.0.0.2-alpha-20180905183619\build\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.targets" Condition="Exists('..\packages\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.0.0.2-alpha-20180905183619\build\HolisticWare.Xamarin.Tools.Bindings.XamarinAndroid.Intellisense.targets')" />
 </Project>

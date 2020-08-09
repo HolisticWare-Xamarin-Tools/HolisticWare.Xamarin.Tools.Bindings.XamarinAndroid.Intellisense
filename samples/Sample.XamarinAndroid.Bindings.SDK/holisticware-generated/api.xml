@@ -1,1 +1,1058 @@
-<api></api>
+<api>
+  <package name="org.chromium.net" jni-name="org/chromium/net">
+    <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="ApiVersion" static="false" visibility="public" jni-signature="Lorg/chromium/net/ApiVersion;">
+      <method abstract="false" deprecated="not deprecated" final="false" name="getApiLevel" jni-signature="()I" bridge="false" native="false" return="int" jni-return="I" static="true" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="getCronetVersion" jni-signature="()Ljava/lang/String;" bridge="false" native="false" return="java.lang.String" jni-return="Ljava/lang/String;" static="true" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="getCronetVersionWithLastChange" jni-signature="()Ljava/lang/String;" bridge="false" native="false" return="java.lang.String" jni-return="Ljava/lang/String;" static="true" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="getLastChange" jni-signature="()Ljava/lang/String;" bridge="false" native="false" return="java.lang.String" jni-return="Ljava/lang/String;" static="true" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="getMaximumAvailableApiLevel" jni-signature="()I" bridge="false" native="false" return="int" jni-return="I" static="true" synchronized="false" synthetic="false" visibility="public">
+      </method>
+    </class>
+    <class abstract="true" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="BidirectionalStream" static="false" visibility="public" jni-signature="Lorg/chromium/net/BidirectionalStream;">
+      <constructor deprecated="not deprecated" final="false" name="BidirectionalStream" jni-signature="()V" bridge="false" static="false" type="org.chromium.net.BidirectionalStream" synthetic="false" visibility="public">
+      </constructor>
+      <method abstract="true" deprecated="not deprecated" final="false" name="cancel" jni-signature="()V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="flush" jni-signature="()V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="isDone" jni-signature="()Z" bridge="false" native="false" return="boolean" jni-return="Z" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="read" jni-signature="(Ljava/nio/ByteBuffer;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="java.nio.ByteBuffer" jni-type="Ljava/nio/ByteBuffer;">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="start" jni-signature="()V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="write" jni-signature="(Ljava/nio/ByteBuffer;Z)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="java.nio.ByteBuffer" jni-type="Ljava/nio/ByteBuffer;">
+        </parameter>
+        <parameter name="p1" type="boolean" jni-type="Z">
+        </parameter>
+      </method>
+    </class>
+    <class abstract="true" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="BidirectionalStream.Builder" static="true" visibility="public" jni-signature="Lorg/chromium/net/BidirectionalStream$Builder;">
+      <constructor deprecated="not deprecated" final="false" name="BidirectionalStream.Builder" jni-signature="()V" bridge="false" static="false" type="org.chromium.net.BidirectionalStream.Builder" synthetic="false" visibility="public">
+      </constructor>
+      <method abstract="true" deprecated="not deprecated" final="false" name="addHeader" jni-signature="(Ljava/lang/String;Ljava/lang/String;)Lorg/chromium/net/BidirectionalStream$Builder;" bridge="false" native="false" return="org.chromium.net.BidirectionalStream.Builder" jni-return="Lorg/chromium/net/BidirectionalStream$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="java.lang.String" jni-type="Ljava/lang/String;">
+        </parameter>
+        <parameter name="p1" type="java.lang.String" jni-type="Ljava/lang/String;">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="build" jni-signature="()Lorg/chromium/net/BidirectionalStream;" bridge="false" native="false" return="org.chromium.net.BidirectionalStream" jni-return="Lorg/chromium/net/BidirectionalStream;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="delayRequestHeadersUntilFirstFlush" jni-signature="(Z)Lorg/chromium/net/BidirectionalStream$Builder;" bridge="false" native="false" return="org.chromium.net.BidirectionalStream.Builder" jni-return="Lorg/chromium/net/BidirectionalStream$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="boolean" jni-type="Z">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="setHttpMethod" jni-signature="(Ljava/lang/String;)Lorg/chromium/net/BidirectionalStream$Builder;" bridge="false" native="false" return="org.chromium.net.BidirectionalStream.Builder" jni-return="Lorg/chromium/net/BidirectionalStream$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="java.lang.String" jni-type="Ljava/lang/String;">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="setPriority" jni-signature="(I)Lorg/chromium/net/BidirectionalStream$Builder;" bridge="false" native="false" return="org.chromium.net.BidirectionalStream.Builder" jni-return="Lorg/chromium/net/BidirectionalStream$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="int" jni-type="I">
+        </parameter>
+      </method>
+      <field deprecated="not deprecated" final="true" name="STREAM_PRIORITY_HIGHEST" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="4" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="STREAM_PRIORITY_IDLE" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="0" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="STREAM_PRIORITY_LOW" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="2" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="STREAM_PRIORITY_LOWEST" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="1" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="STREAM_PRIORITY_MEDIUM" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="3" visibility="public" volatile="false">
+      </field>
+    </class>
+    <class abstract="true" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="BidirectionalStream.Callback" static="true" visibility="public" jni-signature="Lorg/chromium/net/BidirectionalStream$Callback;">
+      <constructor deprecated="not deprecated" final="false" name="BidirectionalStream.Callback" jni-signature="()V" bridge="false" static="false" type="org.chromium.net.BidirectionalStream.Callback" synthetic="false" visibility="public">
+      </constructor>
+      <method abstract="false" deprecated="not deprecated" final="false" name="onCanceled" jni-signature="(Lorg/chromium/net/BidirectionalStream;Lorg/chromium/net/UrlResponseInfo;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="stream" type="org.chromium.net.BidirectionalStream" jni-type="Lorg/chromium/net/BidirectionalStream;">
+        </parameter>
+        <parameter name="info" type="org.chromium.net.UrlResponseInfo" jni-type="Lorg/chromium/net/UrlResponseInfo;">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="onFailed" jni-signature="(Lorg/chromium/net/BidirectionalStream;Lorg/chromium/net/UrlResponseInfo;Lorg/chromium/net/CronetException;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="org.chromium.net.BidirectionalStream" jni-type="Lorg/chromium/net/BidirectionalStream;">
+        </parameter>
+        <parameter name="p1" type="org.chromium.net.UrlResponseInfo" jni-type="Lorg/chromium/net/UrlResponseInfo;">
+        </parameter>
+        <parameter name="p2" type="org.chromium.net.CronetException" jni-type="Lorg/chromium/net/CronetException;">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="onReadCompleted" jni-signature="(Lorg/chromium/net/BidirectionalStream;Lorg/chromium/net/UrlResponseInfo;Ljava/nio/ByteBuffer;Z)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="org.chromium.net.BidirectionalStream" jni-type="Lorg/chromium/net/BidirectionalStream;">
+        </parameter>
+        <parameter name="p1" type="org.chromium.net.UrlResponseInfo" jni-type="Lorg/chromium/net/UrlResponseInfo;">
+        </parameter>
+        <parameter name="p2" type="java.nio.ByteBuffer" jni-type="Ljava/nio/ByteBuffer;">
+        </parameter>
+        <parameter name="p3" type="boolean" jni-type="Z">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="onResponseHeadersReceived" jni-signature="(Lorg/chromium/net/BidirectionalStream;Lorg/chromium/net/UrlResponseInfo;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="org.chromium.net.BidirectionalStream" jni-type="Lorg/chromium/net/BidirectionalStream;">
+        </parameter>
+        <parameter name="p1" type="org.chromium.net.UrlResponseInfo" jni-type="Lorg/chromium/net/UrlResponseInfo;">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="onResponseTrailersReceived" jni-signature="(Lorg/chromium/net/BidirectionalStream;Lorg/chromium/net/UrlResponseInfo;Lorg/chromium/net/UrlResponseInfo$HeaderBlock;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="stream" type="org.chromium.net.BidirectionalStream" jni-type="Lorg/chromium/net/BidirectionalStream;">
+        </parameter>
+        <parameter name="info" type="org.chromium.net.UrlResponseInfo" jni-type="Lorg/chromium/net/UrlResponseInfo;">
+        </parameter>
+        <parameter name="trailers" type="org.chromium.net.UrlResponseInfo.HeaderBlock" jni-type="Lorg/chromium/net/UrlResponseInfo$HeaderBlock;">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="onStreamReady" jni-signature="(Lorg/chromium/net/BidirectionalStream;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="org.chromium.net.BidirectionalStream" jni-type="Lorg/chromium/net/BidirectionalStream;">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="onSucceeded" jni-signature="(Lorg/chromium/net/BidirectionalStream;Lorg/chromium/net/UrlResponseInfo;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="org.chromium.net.BidirectionalStream" jni-type="Lorg/chromium/net/BidirectionalStream;">
+        </parameter>
+        <parameter name="p1" type="org.chromium.net.UrlResponseInfo" jni-type="Lorg/chromium/net/UrlResponseInfo;">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="onWriteCompleted" jni-signature="(Lorg/chromium/net/BidirectionalStream;Lorg/chromium/net/UrlResponseInfo;Ljava/nio/ByteBuffer;Z)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="org.chromium.net.BidirectionalStream" jni-type="Lorg/chromium/net/BidirectionalStream;">
+        </parameter>
+        <parameter name="p1" type="org.chromium.net.UrlResponseInfo" jni-type="Lorg/chromium/net/UrlResponseInfo;">
+        </parameter>
+        <parameter name="p2" type="java.nio.ByteBuffer" jni-type="Ljava/nio/ByteBuffer;">
+        </parameter>
+        <parameter name="p3" type="boolean" jni-type="Z">
+        </parameter>
+      </method>
+    </class>
+    <class abstract="true" deprecated="not deprecated" extends="org.chromium.net.CronetException" extends-generic-aware="org.chromium.net.CronetException" jni-extends="Lorg/chromium/net/CronetException;" final="false" name="CallbackException" static="false" visibility="public" jni-signature="Lorg/chromium/net/CallbackException;">
+      <constructor deprecated="not deprecated" final="false" name="CallbackException" jni-signature="(Ljava/lang/String;Ljava/lang/Throwable;)V" bridge="false" static="false" type="org.chromium.net.CallbackException" synthetic="false" visibility="protected">
+        <parameter name="message" type="java.lang.String" jni-type="Ljava/lang/String;">
+        </parameter>
+        <parameter name="cause" type="java.lang.Throwable" jni-type="Ljava/lang/Throwable;">
+        </parameter>
+      </constructor>
+    </class>
+    <class abstract="true" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="CronetEngine" static="false" visibility="public" jni-signature="Lorg/chromium/net/CronetEngine;">
+      <constructor deprecated="not deprecated" final="false" name="CronetEngine" jni-signature="()V" bridge="false" static="false" type="org.chromium.net.CronetEngine" synthetic="false" visibility="public">
+      </constructor>
+      <method abstract="true" deprecated="not deprecated" final="false" name="createURLStreamHandlerFactory" jni-signature="()Ljava/net/URLStreamHandlerFactory;" bridge="false" native="false" return="java.net.URLStreamHandlerFactory" jni-return="Ljava/net/URLStreamHandlerFactory;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getGlobalMetricsDeltas" jni-signature="()[B" bridge="false" native="false" return="byte[]" jni-return="[B" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getVersionString" jni-signature="()Ljava/lang/String;" bridge="false" native="false" return="java.lang.String" jni-return="Ljava/lang/String;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="newUrlRequestBuilder" jni-signature="(Ljava/lang/String;Lorg/chromium/net/UrlRequest$Callback;Ljava/util/concurrent/Executor;)Lorg/chromium/net/UrlRequest$Builder;" bridge="false" native="false" return="org.chromium.net.UrlRequest.Builder" jni-return="Lorg/chromium/net/UrlRequest$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="java.lang.String" jni-type="Ljava/lang/String;">
+        </parameter>
+        <parameter name="p1" type="org.chromium.net.UrlRequest.Callback" jni-type="Lorg/chromium/net/UrlRequest$Callback;">
+        </parameter>
+        <parameter name="p2" type="java.util.concurrent.Executor" jni-type="Ljava/util/concurrent/Executor;">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="openConnection" jni-signature="(Ljava/net/URL;)Ljava/net/URLConnection;" bridge="false" native="false" return="java.net.URLConnection" jni-return="Ljava/net/URLConnection;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="java.net.URL" jni-type="Ljava/net/URL;">
+        </parameter>
+        <exception name="IOException" type="java.io.IOException">
+        </exception>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="shutdown" jni-signature="()V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="startNetLogToFile" jni-signature="(Ljava/lang/String;Z)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="java.lang.String" jni-type="Ljava/lang/String;">
+        </parameter>
+        <parameter name="p1" type="boolean" jni-type="Z">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="stopNetLog" jni-signature="()V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+    </class>
+    <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="CronetEngine.Builder" static="true" visibility="public" jni-signature="Lorg/chromium/net/CronetEngine$Builder;">
+      <constructor deprecated="not deprecated" final="false" name="CronetEngine.Builder" jni-signature="(Landroid/content/Context;)V" bridge="false" static="false" type="org.chromium.net.CronetEngine.Builder" synthetic="false" visibility="public">
+        <parameter name="context" type="android.content.Context" jni-type="Landroid/content/Context;">
+        </parameter>
+      </constructor>
+      <constructor deprecated="not deprecated" final="false" name="CronetEngine.Builder" jni-signature="(Lorg/chromium/net/ICronetEngineBuilder;)V" bridge="false" static="false" type="org.chromium.net.CronetEngine.Builder" synthetic="false" visibility="public">
+        <parameter name="builderDelegate" type="org.chromium.net.ICronetEngineBuilder" jni-type="Lorg/chromium/net/ICronetEngineBuilder;">
+        </parameter>
+      </constructor>
+      <method abstract="false" deprecated="not deprecated" final="false" name="addPublicKeyPins" jni-signature="(Ljava/lang/String;Ljava/util/Set;ZLjava/util/Date;)Lorg/chromium/net/CronetEngine$Builder;" bridge="false" native="false" return="org.chromium.net.CronetEngine.Builder" jni-return="Lorg/chromium/net/CronetEngine$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="hostName" type="java.lang.String" jni-type="Ljava/lang/String;">
+        </parameter>
+        <parameter name="pinsSha256" type="java.util.Set&lt;byte[]&gt;" jni-type="Ljava/util/Set&lt;[B&gt;;">
+        </parameter>
+        <parameter name="includeSubdomains" type="boolean" jni-type="Z">
+        </parameter>
+        <parameter name="expirationDate" type="java.util.Date" jni-type="Ljava/util/Date;">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="addQuicHint" jni-signature="(Ljava/lang/String;II)Lorg/chromium/net/CronetEngine$Builder;" bridge="false" native="false" return="org.chromium.net.CronetEngine.Builder" jni-return="Lorg/chromium/net/CronetEngine$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="host" type="java.lang.String" jni-type="Ljava/lang/String;">
+        </parameter>
+        <parameter name="port" type="int" jni-type="I">
+        </parameter>
+        <parameter name="alternatePort" type="int" jni-type="I">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="build" jni-signature="()Lorg/chromium/net/CronetEngine;" bridge="false" native="false" return="org.chromium.net.CronetEngine" jni-return="Lorg/chromium/net/CronetEngine;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="enableBrotli" jni-signature="(Z)Lorg/chromium/net/CronetEngine$Builder;" bridge="false" native="false" return="org.chromium.net.CronetEngine.Builder" jni-return="Lorg/chromium/net/CronetEngine$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="value" type="boolean" jni-type="Z">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="enableHttp2" jni-signature="(Z)Lorg/chromium/net/CronetEngine$Builder;" bridge="false" native="false" return="org.chromium.net.CronetEngine.Builder" jni-return="Lorg/chromium/net/CronetEngine$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="value" type="boolean" jni-type="Z">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="enableHttpCache" jni-signature="(IJ)Lorg/chromium/net/CronetEngine$Builder;" bridge="false" native="false" return="org.chromium.net.CronetEngine.Builder" jni-return="Lorg/chromium/net/CronetEngine$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="cacheMode" type="int" jni-type="I">
+        </parameter>
+        <parameter name="maxSize" type="long" jni-type="J">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="enablePublicKeyPinningBypassForLocalTrustAnchors" jni-signature="(Z)Lorg/chromium/net/CronetEngine$Builder;" bridge="false" native="false" return="org.chromium.net.CronetEngine.Builder" jni-return="Lorg/chromium/net/CronetEngine$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="value" type="boolean" jni-type="Z">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="enableQuic" jni-signature="(Z)Lorg/chromium/net/CronetEngine$Builder;" bridge="false" native="false" return="org.chromium.net.CronetEngine.Builder" jni-return="Lorg/chromium/net/CronetEngine$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="value" type="boolean" jni-type="Z">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="deprecated" final="false" name="enableSdch" jni-signature="(Z)Lorg/chromium/net/CronetEngine$Builder;" bridge="false" native="false" return="org.chromium.net.CronetEngine.Builder" jni-return="Lorg/chromium/net/CronetEngine$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="value" type="boolean" jni-type="Z">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="getDefaultUserAgent" jni-signature="()Ljava/lang/String;" bridge="false" native="false" return="java.lang.String" jni-return="Ljava/lang/String;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="setLibraryLoader" jni-signature="(Lorg/chromium/net/CronetEngine$Builder$LibraryLoader;)Lorg/chromium/net/CronetEngine$Builder;" bridge="false" native="false" return="org.chromium.net.CronetEngine.Builder" jni-return="Lorg/chromium/net/CronetEngine$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="loader" type="org.chromium.net.CronetEngine.Builder.LibraryLoader" jni-type="Lorg/chromium/net/CronetEngine$Builder$LibraryLoader;">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="setStoragePath" jni-signature="(Ljava/lang/String;)Lorg/chromium/net/CronetEngine$Builder;" bridge="false" native="false" return="org.chromium.net.CronetEngine.Builder" jni-return="Lorg/chromium/net/CronetEngine$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="value" type="java.lang.String" jni-type="Ljava/lang/String;">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="setUserAgent" jni-signature="(Ljava/lang/String;)Lorg/chromium/net/CronetEngine$Builder;" bridge="false" native="false" return="org.chromium.net.CronetEngine.Builder" jni-return="Lorg/chromium/net/CronetEngine$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="userAgent" type="java.lang.String" jni-type="Ljava/lang/String;">
+        </parameter>
+      </method>
+      <field deprecated="not deprecated" final="true" name="HTTP_CACHE_DISABLED" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="0" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="HTTP_CACHE_DISK" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="3" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="HTTP_CACHE_DISK_NO_HTTP" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="2" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="HTTP_CACHE_IN_MEMORY" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="1" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="mBuilderDelegate" jni-signature="Lorg/chromium/net/ICronetEngineBuilder;" static="false" transient="false" type="org.chromium.net.ICronetEngineBuilder" type-generic-aware="org.chromium.net.ICronetEngineBuilder" visibility="protected" volatile="false">
+      </field>
+    </class>
+    <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="CronetEngine.Builder.1" static="false" visibility="" jni-signature="Lorg/chromium/net/CronetEngine$Builder$1;">
+      <implements name="java.util.Comparator" name-generic-aware="java.util.Comparator&lt;org.chromium.net.CronetProvider&gt;" jni-type="Ljava/util/Comparator&lt;Lorg/chromium/net/CronetProvider;&gt;;">
+      </implements>
+      <method abstract="false" deprecated="not deprecated" final="false" name="compare" jni-signature="(Lorg/chromium/net/CronetProvider;Lorg/chromium/net/CronetProvider;)I" bridge="false" native="false" return="int" jni-return="I" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p1" type="org.chromium.net.CronetProvider" jni-type="Lorg/chromium/net/CronetProvider;">
+        </parameter>
+        <parameter name="p2" type="org.chromium.net.CronetProvider" jni-type="Lorg/chromium/net/CronetProvider;">
+        </parameter>
+      </method>
+    </class>
+    <class abstract="true" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="CronetEngine.Builder.LibraryLoader" static="true" visibility="public" jni-signature="Lorg/chromium/net/CronetEngine$Builder$LibraryLoader;">
+      <constructor deprecated="not deprecated" final="false" name="CronetEngine.Builder.LibraryLoader" jni-signature="()V" bridge="false" static="false" type="org.chromium.net.CronetEngine.Builder.LibraryLoader" synthetic="false" visibility="public">
+      </constructor>
+      <method abstract="true" deprecated="not deprecated" final="false" name="loadLibrary" jni-signature="(Ljava/lang/String;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="java.lang.String" jni-type="Ljava/lang/String;">
+        </parameter>
+      </method>
+    </class>
+    <class abstract="true" deprecated="not deprecated" extends="java.io.IOException" extends-generic-aware="java.io.IOException" jni-extends="Ljava/io/IOException;" final="false" name="CronetException" static="false" visibility="public" jni-signature="Lorg/chromium/net/CronetException;">
+      <constructor deprecated="not deprecated" final="false" name="CronetException" jni-signature="(Ljava/lang/String;Ljava/lang/Throwable;)V" bridge="false" static="false" type="org.chromium.net.CronetException" synthetic="false" visibility="protected">
+        <parameter name="message" type="java.lang.String" jni-type="Ljava/lang/String;">
+        </parameter>
+        <parameter name="cause" type="java.lang.Throwable" jni-type="Ljava/lang/Throwable;">
+        </parameter>
+      </constructor>
+    </class>
+    <class abstract="true" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="CronetProvider" static="false" visibility="public" jni-signature="Lorg/chromium/net/CronetProvider;">
+      <constructor deprecated="not deprecated" final="false" name="CronetProvider" jni-signature="(Landroid/content/Context;)V" bridge="false" static="false" type="org.chromium.net.CronetProvider" synthetic="false" visibility="protected">
+        <parameter name="context" type="android.content.Context" jni-type="Landroid/content/Context;">
+        </parameter>
+      </constructor>
+      <method abstract="true" deprecated="not deprecated" final="false" name="createBuilder" jni-signature="()Lorg/chromium/net/CronetEngine$Builder;" bridge="false" native="false" return="org.chromium.net.CronetEngine.Builder" jni-return="Lorg/chromium/net/CronetEngine$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="getAllProviders" jni-signature="(Landroid/content/Context;)Ljava/util/List;" bridge="false" native="false" return="java.util.List&lt;org.chromium.net.CronetProvider&gt;" jni-return="Ljava/util/List&lt;Lorg/chromium/net/CronetProvider;&gt;;" static="true" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="context" type="android.content.Context" jni-type="Landroid/content/Context;">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getName" jni-signature="()Ljava/lang/String;" bridge="false" native="false" return="java.lang.String" jni-return="Ljava/lang/String;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getVersion" jni-signature="()Ljava/lang/String;" bridge="false" native="false" return="java.lang.String" jni-return="Ljava/lang/String;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="isEnabled" jni-signature="()Z" bridge="false" native="false" return="boolean" jni-return="Z" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <field deprecated="not deprecated" final="true" name="PROVIDER_NAME_APP_PACKAGED" jni-signature="Ljava/lang/String;" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;App-Packaged-Cronet-Provider&quot;" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="PROVIDER_NAME_FALLBACK" jni-signature="Ljava/lang/String;" static="true" transient="false" type="java.lang.String" type-generic-aware="java.lang.String" value="&quot;Fallback-Cronet-Provider&quot;" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="mContext" jni-signature="Landroid/content/Context;" static="false" transient="false" type="android.content.Context" type-generic-aware="android.content.Context" visibility="protected" volatile="false">
+      </field>
+    </class>
+    <class abstract="true" deprecated="not deprecated" extends="org.chromium.net.BidirectionalStream" extends-generic-aware="org.chromium.net.BidirectionalStream" jni-extends="Lorg/chromium/net/BidirectionalStream;" final="false" name="ExperimentalBidirectionalStream" static="false" visibility="public" jni-signature="Lorg/chromium/net/ExperimentalBidirectionalStream;">
+      <constructor deprecated="not deprecated" final="false" name="ExperimentalBidirectionalStream" jni-signature="()V" bridge="false" static="false" type="org.chromium.net.ExperimentalBidirectionalStream" synthetic="false" visibility="public">
+      </constructor>
+    </class>
+    <class abstract="true" deprecated="not deprecated" extends="org.chromium.net.BidirectionalStream.Builder" extends-generic-aware="org.chromium.net.BidirectionalStream.Builder" jni-extends="Lorg/chromium/net/BidirectionalStream$Builder;" final="false" name="ExperimentalBidirectionalStream.Builder" static="true" visibility="public" jni-signature="Lorg/chromium/net/ExperimentalBidirectionalStream$Builder;">
+      <constructor deprecated="not deprecated" final="false" name="ExperimentalBidirectionalStream.Builder" jni-signature="()V" bridge="false" static="false" type="org.chromium.net.ExperimentalBidirectionalStream.Builder" synthetic="false" visibility="public">
+      </constructor>
+      <method abstract="true" deprecated="not deprecated" final="false" name="addHeader" jni-signature="(Ljava/lang/String;Ljava/lang/String;)Lorg/chromium/net/ExperimentalBidirectionalStream$Builder;" bridge="false" native="false" return="org.chromium.net.ExperimentalBidirectionalStream.Builder" jni-return="Lorg/chromium/net/ExperimentalBidirectionalStream$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="java.lang.String" jni-type="Ljava/lang/String;">
+        </parameter>
+        <parameter name="p1" type="java.lang.String" jni-type="Ljava/lang/String;">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="addRequestAnnotation" jni-signature="(Ljava/lang/Object;)Lorg/chromium/net/ExperimentalBidirectionalStream$Builder;" bridge="false" native="false" return="org.chromium.net.ExperimentalBidirectionalStream.Builder" jni-return="Lorg/chromium/net/ExperimentalBidirectionalStream$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="annotation" type="java.lang.Object" jni-type="Ljava/lang/Object;">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="build" jni-signature="()Lorg/chromium/net/ExperimentalBidirectionalStream;" bridge="false" native="false" return="org.chromium.net.ExperimentalBidirectionalStream" jni-return="Lorg/chromium/net/ExperimentalBidirectionalStream;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="delayRequestHeadersUntilFirstFlush" jni-signature="(Z)Lorg/chromium/net/ExperimentalBidirectionalStream$Builder;" bridge="false" native="false" return="org.chromium.net.ExperimentalBidirectionalStream.Builder" jni-return="Lorg/chromium/net/ExperimentalBidirectionalStream$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="boolean" jni-type="Z">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="setHttpMethod" jni-signature="(Ljava/lang/String;)Lorg/chromium/net/ExperimentalBidirectionalStream$Builder;" bridge="false" native="false" return="org.chromium.net.ExperimentalBidirectionalStream.Builder" jni-return="Lorg/chromium/net/ExperimentalBidirectionalStream$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="java.lang.String" jni-type="Ljava/lang/String;">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="setPriority" jni-signature="(I)Lorg/chromium/net/ExperimentalBidirectionalStream$Builder;" bridge="false" native="false" return="org.chromium.net.ExperimentalBidirectionalStream.Builder" jni-return="Lorg/chromium/net/ExperimentalBidirectionalStream$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="int" jni-type="I">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="setTrafficStatsTag" jni-signature="(I)Lorg/chromium/net/ExperimentalBidirectionalStream$Builder;" bridge="false" native="false" return="org.chromium.net.ExperimentalBidirectionalStream.Builder" jni-return="Lorg/chromium/net/ExperimentalBidirectionalStream$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="tag" type="int" jni-type="I">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="setTrafficStatsUid" jni-signature="(I)Lorg/chromium/net/ExperimentalBidirectionalStream$Builder;" bridge="false" native="false" return="org.chromium.net.ExperimentalBidirectionalStream.Builder" jni-return="Lorg/chromium/net/ExperimentalBidirectionalStream$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="uid" type="int" jni-type="I">
+        </parameter>
+      </method>
+    </class>
+    <class abstract="true" deprecated="not deprecated" extends="org.chromium.net.CronetEngine" extends-generic-aware="org.chromium.net.CronetEngine" jni-extends="Lorg/chromium/net/CronetEngine;" final="false" name="ExperimentalCronetEngine" static="false" visibility="public" jni-signature="Lorg/chromium/net/ExperimentalCronetEngine;">
+      <constructor deprecated="not deprecated" final="false" name="ExperimentalCronetEngine" jni-signature="()V" bridge="false" static="false" type="org.chromium.net.ExperimentalCronetEngine" synthetic="false" visibility="public">
+      </constructor>
+      <method abstract="false" deprecated="not deprecated" final="false" name="addRequestFinishedListener" jni-signature="(Lorg/chromium/net/RequestFinishedInfo$Listener;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="listener" type="org.chromium.net.RequestFinishedInfo.Listener" jni-type="Lorg/chromium/net/RequestFinishedInfo$Listener;">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="addRttListener" jni-signature="(Lorg/chromium/net/NetworkQualityRttListener;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="listener" type="org.chromium.net.NetworkQualityRttListener" jni-type="Lorg/chromium/net/NetworkQualityRttListener;">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="addThroughputListener" jni-signature="(Lorg/chromium/net/NetworkQualityThroughputListener;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="listener" type="org.chromium.net.NetworkQualityThroughputListener" jni-type="Lorg/chromium/net/NetworkQualityThroughputListener;">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="configureNetworkQualityEstimatorForTesting" jni-signature="(ZZZ)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="useLocalHostRequests" type="boolean" jni-type="Z">
+        </parameter>
+        <parameter name="useSmallerResponses" type="boolean" jni-type="Z">
+        </parameter>
+        <parameter name="disableOfflineCheck" type="boolean" jni-type="Z">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="getDownstreamThroughputKbps" jni-signature="()I" bridge="false" native="false" return="int" jni-return="I" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="getEffectiveConnectionType" jni-signature="()I" bridge="false" native="false" return="int" jni-return="I" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="getHttpRttMs" jni-signature="()I" bridge="false" native="false" return="int" jni-return="I" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="getTransportRttMs" jni-signature="()I" bridge="false" native="false" return="int" jni-return="I" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="newBidirectionalStreamBuilder" jni-signature="(Ljava/lang/String;Lorg/chromium/net/BidirectionalStream$Callback;Ljava/util/concurrent/Executor;)Lorg/chromium/net/ExperimentalBidirectionalStream$Builder;" bridge="false" native="false" return="org.chromium.net.ExperimentalBidirectionalStream.Builder" jni-return="Lorg/chromium/net/ExperimentalBidirectionalStream$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="java.lang.String" jni-type="Ljava/lang/String;">
+        </parameter>
+        <parameter name="p1" type="org.chromium.net.BidirectionalStream.Callback" jni-type="Lorg/chromium/net/BidirectionalStream$Callback;">
+        </parameter>
+        <parameter name="p2" type="java.util.concurrent.Executor" jni-type="Ljava/util/concurrent/Executor;">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="newUrlRequestBuilder" jni-signature="(Ljava/lang/String;Lorg/chromium/net/UrlRequest$Callback;Ljava/util/concurrent/Executor;)Lorg/chromium/net/ExperimentalUrlRequest$Builder;" bridge="false" native="false" return="org.chromium.net.ExperimentalUrlRequest.Builder" jni-return="Lorg/chromium/net/ExperimentalUrlRequest$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="java.lang.String" jni-type="Ljava/lang/String;">
+        </parameter>
+        <parameter name="p1" type="org.chromium.net.UrlRequest.Callback" jni-type="Lorg/chromium/net/UrlRequest$Callback;">
+        </parameter>
+        <parameter name="p2" type="java.util.concurrent.Executor" jni-type="Ljava/util/concurrent/Executor;">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="openConnection" jni-signature="(Ljava/net/URL;Ljava/net/Proxy;)Ljava/net/URLConnection;" bridge="false" native="false" return="java.net.URLConnection" jni-return="Ljava/net/URLConnection;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="url" type="java.net.URL" jni-type="Ljava/net/URL;">
+        </parameter>
+        <parameter name="proxy" type="java.net.Proxy" jni-type="Ljava/net/Proxy;">
+        </parameter>
+        <exception name="IOException" type="java.io.IOException">
+        </exception>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="removeRequestFinishedListener" jni-signature="(Lorg/chromium/net/RequestFinishedInfo$Listener;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="listener" type="org.chromium.net.RequestFinishedInfo.Listener" jni-type="Lorg/chromium/net/RequestFinishedInfo$Listener;">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="removeRttListener" jni-signature="(Lorg/chromium/net/NetworkQualityRttListener;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="listener" type="org.chromium.net.NetworkQualityRttListener" jni-type="Lorg/chromium/net/NetworkQualityRttListener;">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="removeThroughputListener" jni-signature="(Lorg/chromium/net/NetworkQualityThroughputListener;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="listener" type="org.chromium.net.NetworkQualityThroughputListener" jni-type="Lorg/chromium/net/NetworkQualityThroughputListener;">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="startNetLogToDisk" jni-signature="(Ljava/lang/String;ZI)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="dirPath" type="java.lang.String" jni-type="Ljava/lang/String;">
+        </parameter>
+        <parameter name="logAll" type="boolean" jni-type="Z">
+        </parameter>
+        <parameter name="maxSize" type="int" jni-type="I">
+        </parameter>
+      </method>
+      <field deprecated="not deprecated" final="true" name="CONNECTION_METRIC_UNKNOWN" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="-1" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="EFFECTIVE_CONNECTION_TYPE_2G" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="3" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="EFFECTIVE_CONNECTION_TYPE_3G" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="4" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="EFFECTIVE_CONNECTION_TYPE_4G" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="5" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="EFFECTIVE_CONNECTION_TYPE_OFFLINE" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="1" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="EFFECTIVE_CONNECTION_TYPE_SLOW_2G" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="2" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="EFFECTIVE_CONNECTION_TYPE_UNKNOWN" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="0" visibility="public" volatile="false">
+      </field>
+    </class>
+    <class abstract="false" deprecated="not deprecated" extends="org.chromium.net.CronetEngine.Builder" extends-generic-aware="org.chromium.net.CronetEngine.Builder" jni-extends="Lorg/chromium/net/CronetEngine$Builder;" final="false" name="ExperimentalCronetEngine.Builder" static="true" visibility="public" jni-signature="Lorg/chromium/net/ExperimentalCronetEngine$Builder;">
+      <constructor deprecated="not deprecated" final="false" name="ExperimentalCronetEngine.Builder" jni-signature="(Landroid/content/Context;)V" bridge="false" static="false" type="org.chromium.net.ExperimentalCronetEngine.Builder" synthetic="false" visibility="public">
+        <parameter name="context" type="android.content.Context" jni-type="Landroid/content/Context;">
+        </parameter>
+      </constructor>
+      <constructor deprecated="not deprecated" final="false" name="ExperimentalCronetEngine.Builder" jni-signature="(Lorg/chromium/net/ICronetEngineBuilder;)V" bridge="false" static="false" type="org.chromium.net.ExperimentalCronetEngine.Builder" synthetic="false" visibility="public">
+        <parameter name="builderDelegate" type="org.chromium.net.ICronetEngineBuilder" jni-type="Lorg/chromium/net/ICronetEngineBuilder;">
+        </parameter>
+      </constructor>
+      <method abstract="false" deprecated="not deprecated" final="false" name="enableNetworkQualityEstimator" jni-signature="(Z)Lorg/chromium/net/ExperimentalCronetEngine$Builder;" bridge="false" native="false" return="org.chromium.net.ExperimentalCronetEngine.Builder" jni-return="Lorg/chromium/net/ExperimentalCronetEngine$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="value" type="boolean" jni-type="Z">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="getBuilderDelegate" jni-signature="()Lorg/chromium/net/ICronetEngineBuilder;" bridge="false" native="false" return="org.chromium.net.ICronetEngineBuilder" jni-return="Lorg/chromium/net/ICronetEngineBuilder;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="setExperimentalOptions" jni-signature="(Ljava/lang/String;)Lorg/chromium/net/ExperimentalCronetEngine$Builder;" bridge="false" native="false" return="org.chromium.net.ExperimentalCronetEngine.Builder" jni-return="Lorg/chromium/net/ExperimentalCronetEngine$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="options" type="java.lang.String" jni-type="Ljava/lang/String;">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="setThreadPriority" jni-signature="(I)Lorg/chromium/net/ExperimentalCronetEngine$Builder;" bridge="false" native="false" return="org.chromium.net.ExperimentalCronetEngine.Builder" jni-return="Lorg/chromium/net/ExperimentalCronetEngine$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="priority" type="int" jni-type="I">
+        </parameter>
+      </method>
+    </class>
+    <class abstract="true" deprecated="not deprecated" extends="org.chromium.net.UrlRequest" extends-generic-aware="org.chromium.net.UrlRequest" jni-extends="Lorg/chromium/net/UrlRequest;" final="false" name="ExperimentalUrlRequest" static="false" visibility="public" jni-signature="Lorg/chromium/net/ExperimentalUrlRequest;">
+      <constructor deprecated="not deprecated" final="false" name="ExperimentalUrlRequest" jni-signature="()V" bridge="false" static="false" type="org.chromium.net.ExperimentalUrlRequest" synthetic="false" visibility="public">
+      </constructor>
+    </class>
+    <class abstract="true" deprecated="not deprecated" extends="org.chromium.net.UrlRequest.Builder" extends-generic-aware="org.chromium.net.UrlRequest.Builder" jni-extends="Lorg/chromium/net/UrlRequest$Builder;" final="false" name="ExperimentalUrlRequest.Builder" static="true" visibility="public" jni-signature="Lorg/chromium/net/ExperimentalUrlRequest$Builder;">
+      <constructor deprecated="not deprecated" final="false" name="ExperimentalUrlRequest.Builder" jni-signature="()V" bridge="false" static="false" type="org.chromium.net.ExperimentalUrlRequest.Builder" synthetic="false" visibility="public">
+      </constructor>
+      <method abstract="true" deprecated="not deprecated" final="false" name="addHeader" jni-signature="(Ljava/lang/String;Ljava/lang/String;)Lorg/chromium/net/ExperimentalUrlRequest$Builder;" bridge="false" native="false" return="org.chromium.net.ExperimentalUrlRequest.Builder" jni-return="Lorg/chromium/net/ExperimentalUrlRequest$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="java.lang.String" jni-type="Ljava/lang/String;">
+        </parameter>
+        <parameter name="p1" type="java.lang.String" jni-type="Ljava/lang/String;">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="addRequestAnnotation" jni-signature="(Ljava/lang/Object;)Lorg/chromium/net/ExperimentalUrlRequest$Builder;" bridge="false" native="false" return="org.chromium.net.ExperimentalUrlRequest.Builder" jni-return="Lorg/chromium/net/ExperimentalUrlRequest$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="annotation" type="java.lang.Object" jni-type="Ljava/lang/Object;">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="allowDirectExecutor" jni-signature="()Lorg/chromium/net/ExperimentalUrlRequest$Builder;" bridge="false" native="false" return="org.chromium.net.ExperimentalUrlRequest.Builder" jni-return="Lorg/chromium/net/ExperimentalUrlRequest$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="build" jni-signature="()Lorg/chromium/net/ExperimentalUrlRequest;" bridge="false" native="false" return="org.chromium.net.ExperimentalUrlRequest" jni-return="Lorg/chromium/net/ExperimentalUrlRequest;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="disableCache" jni-signature="()Lorg/chromium/net/ExperimentalUrlRequest$Builder;" bridge="false" native="false" return="org.chromium.net.ExperimentalUrlRequest.Builder" jni-return="Lorg/chromium/net/ExperimentalUrlRequest$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="disableConnectionMigration" jni-signature="()Lorg/chromium/net/ExperimentalUrlRequest$Builder;" bridge="false" native="false" return="org.chromium.net.ExperimentalUrlRequest.Builder" jni-return="Lorg/chromium/net/ExperimentalUrlRequest$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="setHttpMethod" jni-signature="(Ljava/lang/String;)Lorg/chromium/net/ExperimentalUrlRequest$Builder;" bridge="false" native="false" return="org.chromium.net.ExperimentalUrlRequest.Builder" jni-return="Lorg/chromium/net/ExperimentalUrlRequest$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="java.lang.String" jni-type="Ljava/lang/String;">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="setPriority" jni-signature="(I)Lorg/chromium/net/ExperimentalUrlRequest$Builder;" bridge="false" native="false" return="org.chromium.net.ExperimentalUrlRequest.Builder" jni-return="Lorg/chromium/net/ExperimentalUrlRequest$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="int" jni-type="I">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="setRequestFinishedListener" jni-signature="(Lorg/chromium/net/RequestFinishedInfo$Listener;)Lorg/chromium/net/ExperimentalUrlRequest$Builder;" bridge="false" native="false" return="org.chromium.net.ExperimentalUrlRequest.Builder" jni-return="Lorg/chromium/net/ExperimentalUrlRequest$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="listener" type="org.chromium.net.RequestFinishedInfo.Listener" jni-type="Lorg/chromium/net/RequestFinishedInfo$Listener;">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="setTrafficStatsTag" jni-signature="(I)Lorg/chromium/net/ExperimentalUrlRequest$Builder;" bridge="false" native="false" return="org.chromium.net.ExperimentalUrlRequest.Builder" jni-return="Lorg/chromium/net/ExperimentalUrlRequest$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="tag" type="int" jni-type="I">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="setTrafficStatsUid" jni-signature="(I)Lorg/chromium/net/ExperimentalUrlRequest$Builder;" bridge="false" native="false" return="org.chromium.net.ExperimentalUrlRequest.Builder" jni-return="Lorg/chromium/net/ExperimentalUrlRequest$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="uid" type="int" jni-type="I">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="setUploadDataProvider" jni-signature="(Lorg/chromium/net/UploadDataProvider;Ljava/util/concurrent/Executor;)Lorg/chromium/net/ExperimentalUrlRequest$Builder;" bridge="false" native="false" return="org.chromium.net.ExperimentalUrlRequest.Builder" jni-return="Lorg/chromium/net/ExperimentalUrlRequest$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="org.chromium.net.UploadDataProvider" jni-type="Lorg/chromium/net/UploadDataProvider;">
+        </parameter>
+        <parameter name="p1" type="java.util.concurrent.Executor" jni-type="Ljava/util/concurrent/Executor;">
+        </parameter>
+      </method>
+    </class>
+    <class abstract="true" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="ICronetEngineBuilder" static="false" visibility="public" jni-signature="Lorg/chromium/net/ICronetEngineBuilder;">
+      <constructor deprecated="not deprecated" final="false" name="ICronetEngineBuilder" jni-signature="()V" bridge="false" static="false" type="org.chromium.net.ICronetEngineBuilder" synthetic="false" visibility="public">
+      </constructor>
+      <method abstract="true" deprecated="not deprecated" final="false" name="addPublicKeyPins" jni-signature="(Ljava/lang/String;Ljava/util/Set;ZLjava/util/Date;)Lorg/chromium/net/ICronetEngineBuilder;" bridge="false" native="false" return="org.chromium.net.ICronetEngineBuilder" jni-return="Lorg/chromium/net/ICronetEngineBuilder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="java.lang.String" jni-type="Ljava/lang/String;">
+        </parameter>
+        <parameter name="p1" type="java.util.Set&lt;byte[]&gt;" jni-type="Ljava/util/Set&lt;[B&gt;;">
+        </parameter>
+        <parameter name="p2" type="boolean" jni-type="Z">
+        </parameter>
+        <parameter name="p3" type="java.util.Date" jni-type="Ljava/util/Date;">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="addQuicHint" jni-signature="(Ljava/lang/String;II)Lorg/chromium/net/ICronetEngineBuilder;" bridge="false" native="false" return="org.chromium.net.ICronetEngineBuilder" jni-return="Lorg/chromium/net/ICronetEngineBuilder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="java.lang.String" jni-type="Ljava/lang/String;">
+        </parameter>
+        <parameter name="p1" type="int" jni-type="I">
+        </parameter>
+        <parameter name="p2" type="int" jni-type="I">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="build" jni-signature="()Lorg/chromium/net/ExperimentalCronetEngine;" bridge="false" native="false" return="org.chromium.net.ExperimentalCronetEngine" jni-return="Lorg/chromium/net/ExperimentalCronetEngine;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="enableBrotli" jni-signature="(Z)Lorg/chromium/net/ICronetEngineBuilder;" bridge="false" native="false" return="org.chromium.net.ICronetEngineBuilder" jni-return="Lorg/chromium/net/ICronetEngineBuilder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="value" type="boolean" jni-type="Z">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="enableHttp2" jni-signature="(Z)Lorg/chromium/net/ICronetEngineBuilder;" bridge="false" native="false" return="org.chromium.net.ICronetEngineBuilder" jni-return="Lorg/chromium/net/ICronetEngineBuilder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="boolean" jni-type="Z">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="enableHttpCache" jni-signature="(IJ)Lorg/chromium/net/ICronetEngineBuilder;" bridge="false" native="false" return="org.chromium.net.ICronetEngineBuilder" jni-return="Lorg/chromium/net/ICronetEngineBuilder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="int" jni-type="I">
+        </parameter>
+        <parameter name="p1" type="long" jni-type="J">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="enableNetworkQualityEstimator" jni-signature="(Z)Lorg/chromium/net/ICronetEngineBuilder;" bridge="false" native="false" return="org.chromium.net.ICronetEngineBuilder" jni-return="Lorg/chromium/net/ICronetEngineBuilder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="value" type="boolean" jni-type="Z">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="enablePublicKeyPinningBypassForLocalTrustAnchors" jni-signature="(Z)Lorg/chromium/net/ICronetEngineBuilder;" bridge="false" native="false" return="org.chromium.net.ICronetEngineBuilder" jni-return="Lorg/chromium/net/ICronetEngineBuilder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="boolean" jni-type="Z">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="enableQuic" jni-signature="(Z)Lorg/chromium/net/ICronetEngineBuilder;" bridge="false" native="false" return="org.chromium.net.ICronetEngineBuilder" jni-return="Lorg/chromium/net/ICronetEngineBuilder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="boolean" jni-type="Z">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="enableSdch" jni-signature="(Z)Lorg/chromium/net/ICronetEngineBuilder;" bridge="false" native="false" return="org.chromium.net.ICronetEngineBuilder" jni-return="Lorg/chromium/net/ICronetEngineBuilder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="boolean" jni-type="Z">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getDefaultUserAgent" jni-signature="()Ljava/lang/String;" bridge="false" native="false" return="java.lang.String" jni-return="Ljava/lang/String;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="setExperimentalOptions" jni-signature="(Ljava/lang/String;)Lorg/chromium/net/ICronetEngineBuilder;" bridge="false" native="false" return="org.chromium.net.ICronetEngineBuilder" jni-return="Lorg/chromium/net/ICronetEngineBuilder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="java.lang.String" jni-type="Ljava/lang/String;">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="setLibraryLoader" jni-signature="(Lorg/chromium/net/CronetEngine$Builder$LibraryLoader;)Lorg/chromium/net/ICronetEngineBuilder;" bridge="false" native="false" return="org.chromium.net.ICronetEngineBuilder" jni-return="Lorg/chromium/net/ICronetEngineBuilder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="org.chromium.net.CronetEngine.Builder.LibraryLoader" jni-type="Lorg/chromium/net/CronetEngine$Builder$LibraryLoader;">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="setStoragePath" jni-signature="(Ljava/lang/String;)Lorg/chromium/net/ICronetEngineBuilder;" bridge="false" native="false" return="org.chromium.net.ICronetEngineBuilder" jni-return="Lorg/chromium/net/ICronetEngineBuilder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="java.lang.String" jni-type="Ljava/lang/String;">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="setThreadPriority" jni-signature="(I)Lorg/chromium/net/ICronetEngineBuilder;" bridge="false" native="false" return="org.chromium.net.ICronetEngineBuilder" jni-return="Lorg/chromium/net/ICronetEngineBuilder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="priority" type="int" jni-type="I">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="setUserAgent" jni-signature="(Ljava/lang/String;)Lorg/chromium/net/ICronetEngineBuilder;" bridge="false" native="false" return="org.chromium.net.ICronetEngineBuilder" jni-return="Lorg/chromium/net/ICronetEngineBuilder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="java.lang.String" jni-type="Ljava/lang/String;">
+        </parameter>
+      </method>
+    </class>
+    <class abstract="false" deprecated="not deprecated" extends="java.util.concurrent.RejectedExecutionException" extends-generic-aware="java.util.concurrent.RejectedExecutionException" jni-extends="Ljava/util/concurrent/RejectedExecutionException;" final="true" name="InlineExecutionProhibitedException" static="false" visibility="public" jni-signature="Lorg/chromium/net/InlineExecutionProhibitedException;">
+      <constructor deprecated="not deprecated" final="false" name="InlineExecutionProhibitedException" jni-signature="()V" bridge="false" static="false" type="org.chromium.net.InlineExecutionProhibitedException" synthetic="false" visibility="public">
+      </constructor>
+    </class>
+    <class abstract="true" deprecated="not deprecated" extends="org.chromium.net.CronetException" extends-generic-aware="org.chromium.net.CronetException" jni-extends="Lorg/chromium/net/CronetException;" final="false" name="NetworkException" static="false" visibility="public" jni-signature="Lorg/chromium/net/NetworkException;">
+      <constructor deprecated="not deprecated" final="false" name="NetworkException" jni-signature="(Ljava/lang/String;Ljava/lang/Throwable;)V" bridge="false" static="false" type="org.chromium.net.NetworkException" synthetic="false" visibility="protected">
+        <parameter name="message" type="java.lang.String" jni-type="Ljava/lang/String;">
+        </parameter>
+        <parameter name="cause" type="java.lang.Throwable" jni-type="Ljava/lang/Throwable;">
+        </parameter>
+      </constructor>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getCronetInternalErrorCode" jni-signature="()I" bridge="false" native="false" return="int" jni-return="I" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getErrorCode" jni-signature="()I" bridge="false" native="false" return="int" jni-return="I" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="immediatelyRetryable" jni-signature="()Z" bridge="false" native="false" return="boolean" jni-return="Z" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <field deprecated="not deprecated" final="true" name="ERROR_ADDRESS_UNREACHABLE" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="9" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="ERROR_CONNECTION_CLOSED" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="5" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="ERROR_CONNECTION_REFUSED" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="7" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="ERROR_CONNECTION_RESET" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="8" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="ERROR_CONNECTION_TIMED_OUT" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="6" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="ERROR_HOSTNAME_NOT_RESOLVED" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="1" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="ERROR_INTERNET_DISCONNECTED" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="2" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="ERROR_NETWORK_CHANGED" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="3" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="ERROR_OTHER" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="11" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="ERROR_QUIC_PROTOCOL_FAILED" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="10" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="ERROR_TIMED_OUT" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="4" visibility="public" volatile="false">
+      </field>
+    </class>
+    <class abstract="true" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="NetworkQualityRttListener" static="false" visibility="public" jni-signature="Lorg/chromium/net/NetworkQualityRttListener;">
+      <constructor deprecated="not deprecated" final="false" name="NetworkQualityRttListener" jni-signature="(Ljava/util/concurrent/Executor;)V" bridge="false" static="false" type="org.chromium.net.NetworkQualityRttListener" synthetic="false" visibility="public">
+        <parameter name="executor" type="java.util.concurrent.Executor" jni-type="Ljava/util/concurrent/Executor;">
+        </parameter>
+      </constructor>
+      <method abstract="false" deprecated="not deprecated" final="false" name="getExecutor" jni-signature="()Ljava/util/concurrent/Executor;" bridge="false" native="false" return="java.util.concurrent.Executor" jni-return="Ljava/util/concurrent/Executor;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="onRttObservation" jni-signature="(IJI)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="int" jni-type="I">
+        </parameter>
+        <parameter name="p1" type="long" jni-type="J">
+        </parameter>
+        <parameter name="p2" type="int" jni-type="I">
+        </parameter>
+      </method>
+    </class>
+    <class abstract="true" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="NetworkQualityThroughputListener" static="false" visibility="public" jni-signature="Lorg/chromium/net/NetworkQualityThroughputListener;">
+      <constructor deprecated="not deprecated" final="false" name="NetworkQualityThroughputListener" jni-signature="(Ljava/util/concurrent/Executor;)V" bridge="false" static="false" type="org.chromium.net.NetworkQualityThroughputListener" synthetic="false" visibility="public">
+        <parameter name="executor" type="java.util.concurrent.Executor" jni-type="Ljava/util/concurrent/Executor;">
+        </parameter>
+      </constructor>
+      <method abstract="false" deprecated="not deprecated" final="false" name="getExecutor" jni-signature="()Ljava/util/concurrent/Executor;" bridge="false" native="false" return="java.util.concurrent.Executor" jni-return="Ljava/util/concurrent/Executor;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="onThroughputObservation" jni-signature="(IJI)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="int" jni-type="I">
+        </parameter>
+        <parameter name="p1" type="long" jni-type="J">
+        </parameter>
+        <parameter name="p2" type="int" jni-type="I">
+        </parameter>
+      </method>
+    </class>
+    <class abstract="true" deprecated="not deprecated" extends="org.chromium.net.NetworkException" extends-generic-aware="org.chromium.net.NetworkException" jni-extends="Lorg/chromium/net/NetworkException;" final="false" name="QuicException" static="false" visibility="public" jni-signature="Lorg/chromium/net/QuicException;">
+      <constructor deprecated="not deprecated" final="false" name="QuicException" jni-signature="(Ljava/lang/String;Ljava/lang/Throwable;)V" bridge="false" static="false" type="org.chromium.net.QuicException" synthetic="false" visibility="protected">
+        <parameter name="message" type="java.lang.String" jni-type="Ljava/lang/String;">
+        </parameter>
+        <parameter name="cause" type="java.lang.Throwable" jni-type="Ljava/lang/Throwable;">
+        </parameter>
+      </constructor>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getQuicDetailedErrorCode" jni-signature="()I" bridge="false" native="false" return="int" jni-return="I" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+    </class>
+    <class abstract="true" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="RequestFinishedInfo" static="false" visibility="public" jni-signature="Lorg/chromium/net/RequestFinishedInfo;">
+      <constructor deprecated="not deprecated" final="false" name="RequestFinishedInfo" jni-signature="()V" bridge="false" static="false" type="org.chromium.net.RequestFinishedInfo" synthetic="false" visibility="public">
+      </constructor>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getAnnotations" jni-signature="()Ljava/util/Collection;" bridge="false" native="false" return="java.util.Collection&lt;java.lang.Object&gt;" jni-return="Ljava/util/Collection&lt;Ljava/lang/Object;&gt;;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getException" jni-signature="()Lorg/chromium/net/CronetException;" bridge="false" native="false" return="org.chromium.net.CronetException" jni-return="Lorg/chromium/net/CronetException;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getFinishedReason" jni-signature="()I" bridge="false" native="false" return="int" jni-return="I" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getMetrics" jni-signature="()Lorg/chromium/net/RequestFinishedInfo$Metrics;" bridge="false" native="false" return="org.chromium.net.RequestFinishedInfo.Metrics" jni-return="Lorg/chromium/net/RequestFinishedInfo$Metrics;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getResponseInfo" jni-signature="()Lorg/chromium/net/UrlResponseInfo;" bridge="false" native="false" return="org.chromium.net.UrlResponseInfo" jni-return="Lorg/chromium/net/UrlResponseInfo;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getUrl" jni-signature="()Ljava/lang/String;" bridge="false" native="false" return="java.lang.String" jni-return="Ljava/lang/String;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <field deprecated="not deprecated" final="true" name="CANCELED" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="2" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="FAILED" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="1" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="SUCCEEDED" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="0" visibility="public" volatile="false">
+      </field>
+    </class>
+    <class abstract="true" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="RequestFinishedInfo.Listener" static="true" visibility="public" jni-signature="Lorg/chromium/net/RequestFinishedInfo$Listener;">
+      <constructor deprecated="not deprecated" final="false" name="RequestFinishedInfo.Listener" jni-signature="(Ljava/util/concurrent/Executor;)V" bridge="false" static="false" type="org.chromium.net.RequestFinishedInfo.Listener" synthetic="false" visibility="public">
+        <parameter name="executor" type="java.util.concurrent.Executor" jni-type="Ljava/util/concurrent/Executor;">
+        </parameter>
+      </constructor>
+      <method abstract="false" deprecated="not deprecated" final="false" name="getExecutor" jni-signature="()Ljava/util/concurrent/Executor;" bridge="false" native="false" return="java.util.concurrent.Executor" jni-return="Ljava/util/concurrent/Executor;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="onRequestFinished" jni-signature="(Lorg/chromium/net/RequestFinishedInfo;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="org.chromium.net.RequestFinishedInfo" jni-type="Lorg/chromium/net/RequestFinishedInfo;">
+        </parameter>
+      </method>
+    </class>
+    <class abstract="true" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="RequestFinishedInfo.Metrics" static="true" visibility="public" jni-signature="Lorg/chromium/net/RequestFinishedInfo$Metrics;">
+      <constructor deprecated="not deprecated" final="false" name="RequestFinishedInfo.Metrics" jni-signature="()V" bridge="false" static="false" type="org.chromium.net.RequestFinishedInfo.Metrics" synthetic="false" visibility="public">
+      </constructor>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getConnectEnd" jni-signature="()Ljava/util/Date;" bridge="false" native="false" return="java.util.Date" jni-return="Ljava/util/Date;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getConnectStart" jni-signature="()Ljava/util/Date;" bridge="false" native="false" return="java.util.Date" jni-return="Ljava/util/Date;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getDnsEnd" jni-signature="()Ljava/util/Date;" bridge="false" native="false" return="java.util.Date" jni-return="Ljava/util/Date;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getDnsStart" jni-signature="()Ljava/util/Date;" bridge="false" native="false" return="java.util.Date" jni-return="Ljava/util/Date;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getPushEnd" jni-signature="()Ljava/util/Date;" bridge="false" native="false" return="java.util.Date" jni-return="Ljava/util/Date;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getPushStart" jni-signature="()Ljava/util/Date;" bridge="false" native="false" return="java.util.Date" jni-return="Ljava/util/Date;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getReceivedByteCount" jni-signature="()Ljava/lang/Long;" bridge="false" native="false" return="java.lang.Long" jni-return="Ljava/lang/Long;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getRequestEnd" jni-signature="()Ljava/util/Date;" bridge="false" native="false" return="java.util.Date" jni-return="Ljava/util/Date;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getRequestStart" jni-signature="()Ljava/util/Date;" bridge="false" native="false" return="java.util.Date" jni-return="Ljava/util/Date;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getResponseStart" jni-signature="()Ljava/util/Date;" bridge="false" native="false" return="java.util.Date" jni-return="Ljava/util/Date;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getSendingEnd" jni-signature="()Ljava/util/Date;" bridge="false" native="false" return="java.util.Date" jni-return="Ljava/util/Date;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getSendingStart" jni-signature="()Ljava/util/Date;" bridge="false" native="false" return="java.util.Date" jni-return="Ljava/util/Date;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getSentByteCount" jni-signature="()Ljava/lang/Long;" bridge="false" native="false" return="java.lang.Long" jni-return="Ljava/lang/Long;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getSocketReused" jni-signature="()Z" bridge="false" native="false" return="boolean" jni-return="Z" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getSslEnd" jni-signature="()Ljava/util/Date;" bridge="false" native="false" return="java.util.Date" jni-return="Ljava/util/Date;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getSslStart" jni-signature="()Ljava/util/Date;" bridge="false" native="false" return="java.util.Date" jni-return="Ljava/util/Date;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getTotalTimeMs" jni-signature="()Ljava/lang/Long;" bridge="false" native="false" return="java.lang.Long" jni-return="Ljava/lang/Long;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getTtfbMs" jni-signature="()Ljava/lang/Long;" bridge="false" native="false" return="java.lang.Long" jni-return="Ljava/lang/Long;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+    </class>
+    <class abstract="true" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="UploadDataProvider" static="false" visibility="public" jni-signature="Lorg/chromium/net/UploadDataProvider;">
+      <implements name="java.io.Closeable" name-generic-aware="java.io.Closeable" jni-type="Ljava/io/Closeable;">
+      </implements>
+      <constructor deprecated="not deprecated" final="false" name="UploadDataProvider" jni-signature="()V" bridge="false" static="false" type="org.chromium.net.UploadDataProvider" synthetic="false" visibility="public">
+      </constructor>
+      <method abstract="false" deprecated="not deprecated" final="false" name="close" jni-signature="()V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <exception name="IOException" type="java.io.IOException">
+        </exception>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getLength" jni-signature="()J" bridge="false" native="false" return="long" jni-return="J" static="false" synchronized="false" synthetic="false" visibility="public">
+        <exception name="IOException" type="java.io.IOException">
+        </exception>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="read" jni-signature="(Lorg/chromium/net/UploadDataSink;Ljava/nio/ByteBuffer;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="org.chromium.net.UploadDataSink" jni-type="Lorg/chromium/net/UploadDataSink;">
+        </parameter>
+        <parameter name="p1" type="java.nio.ByteBuffer" jni-type="Ljava/nio/ByteBuffer;">
+        </parameter>
+        <exception name="IOException" type="java.io.IOException">
+        </exception>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="rewind" jni-signature="(Lorg/chromium/net/UploadDataSink;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="org.chromium.net.UploadDataSink" jni-type="Lorg/chromium/net/UploadDataSink;">
+        </parameter>
+        <exception name="IOException" type="java.io.IOException">
+        </exception>
+      </method>
+    </class>
+    <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="true" name="UploadDataProviders" static="false" visibility="public" jni-signature="Lorg/chromium/net/UploadDataProviders;">
+      <method abstract="false" deprecated="not deprecated" final="false" name="create" jni-signature="(Landroid/os/ParcelFileDescriptor;)Lorg/chromium/net/UploadDataProvider;" bridge="false" native="false" return="org.chromium.net.UploadDataProvider" jni-return="Lorg/chromium/net/UploadDataProvider;" static="true" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="fd" type="android.os.ParcelFileDescriptor" jni-type="Landroid/os/ParcelFileDescriptor;">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="create" jni-signature="([B)Lorg/chromium/net/UploadDataProvider;" bridge="false" native="false" return="org.chromium.net.UploadDataProvider" jni-return="Lorg/chromium/net/UploadDataProvider;" static="true" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="data" type="byte[]" jni-type="[B">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="create" jni-signature="([BII)Lorg/chromium/net/UploadDataProvider;" bridge="false" native="false" return="org.chromium.net.UploadDataProvider" jni-return="Lorg/chromium/net/UploadDataProvider;" static="true" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="data" type="byte[]" jni-type="[B">
+        </parameter>
+        <parameter name="offset" type="int" jni-type="I">
+        </parameter>
+        <parameter name="length" type="int" jni-type="I">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="create" jni-signature="(Ljava/io/File;)Lorg/chromium/net/UploadDataProvider;" bridge="false" native="false" return="org.chromium.net.UploadDataProvider" jni-return="Lorg/chromium/net/UploadDataProvider;" static="true" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="file" type="java.io.File" jni-type="Ljava/io/File;">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="create" jni-signature="(Ljava/nio/ByteBuffer;)Lorg/chromium/net/UploadDataProvider;" bridge="false" native="false" return="org.chromium.net.UploadDataProvider" jni-return="Lorg/chromium/net/UploadDataProvider;" static="true" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="buffer" type="java.nio.ByteBuffer" jni-type="Ljava/nio/ByteBuffer;">
+        </parameter>
+      </method>
+    </class>
+    <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="UploadDataProviders.1" static="false" visibility="" jni-signature="Lorg/chromium/net/UploadDataProviders$1;">
+      <implements name="org.chromium.net.UploadDataProviders.FileChannelProvider" name-generic-aware="org.chromium.net.UploadDataProviders.FileChannelProvider" jni-type="Lorg/chromium/net/UploadDataProviders$FileChannelProvider;">
+      </implements>
+      <method abstract="false" deprecated="not deprecated" final="false" name="getChannel" jni-signature="()Ljava/nio/channels/FileChannel;" bridge="false" native="false" return="java.nio.channels.FileChannel" jni-return="Ljava/nio/channels/FileChannel;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <exception name="IOException" type="java.io.IOException">
+        </exception>
+      </method>
+    </class>
+    <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="UploadDataProviders.2" static="false" visibility="" jni-signature="Lorg/chromium/net/UploadDataProviders$2;">
+      <implements name="org.chromium.net.UploadDataProviders.FileChannelProvider" name-generic-aware="org.chromium.net.UploadDataProviders.FileChannelProvider" jni-type="Lorg/chromium/net/UploadDataProviders$FileChannelProvider;">
+      </implements>
+      <method abstract="false" deprecated="not deprecated" final="false" name="getChannel" jni-signature="()Ljava/nio/channels/FileChannel;" bridge="false" native="false" return="java.nio.channels.FileChannel" jni-return="Ljava/nio/channels/FileChannel;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <exception name="IOException" type="java.io.IOException">
+        </exception>
+      </method>
+    </class>
+    <class abstract="false" deprecated="not deprecated" extends="org.chromium.net.UploadDataProvider" extends-generic-aware="org.chromium.net.UploadDataProvider" jni-extends="Lorg/chromium/net/UploadDataProvider;" final="true" name="UploadDataProviders.ByteBufferUploadProvider" static="true" visibility="private" jni-signature="Lorg/chromium/net/UploadDataProviders$ByteBufferUploadProvider;">
+      <method abstract="false" deprecated="not deprecated" final="false" name="getLength" jni-signature="()J" bridge="false" native="false" return="long" jni-return="J" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="read" jni-signature="(Lorg/chromium/net/UploadDataSink;Ljava/nio/ByteBuffer;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="uploadDataSink" type="org.chromium.net.UploadDataSink" jni-type="Lorg/chromium/net/UploadDataSink;">
+        </parameter>
+        <parameter name="byteBuffer" type="java.nio.ByteBuffer" jni-type="Ljava/nio/ByteBuffer;">
+        </parameter>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="rewind" jni-signature="(Lorg/chromium/net/UploadDataSink;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="uploadDataSink" type="org.chromium.net.UploadDataSink" jni-type="Lorg/chromium/net/UploadDataSink;">
+        </parameter>
+      </method>
+    </class>
+    <interface abstract="true" deprecated="not deprecated" final="false" name="UploadDataProviders.FileChannelProvider" static="true" visibility="private" jni-signature="Lorg/chromium/net/UploadDataProviders$FileChannelProvider;">
+      <method abstract="true" deprecated="not deprecated" final="false" name="getChannel" jni-signature="()Ljava/nio/channels/FileChannel;" bridge="false" native="false" return="java.nio.channels.FileChannel" jni-return="Ljava/nio/channels/FileChannel;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <exception name="IOException" type="java.io.IOException">
+        </exception>
+      </method>
+    </interface>
+    <class abstract="false" deprecated="not deprecated" extends="org.chromium.net.UploadDataProvider" extends-generic-aware="org.chromium.net.UploadDataProvider" jni-extends="Lorg/chromium/net/UploadDataProvider;" final="true" name="UploadDataProviders.FileUploadProvider" static="true" visibility="private" jni-signature="Lorg/chromium/net/UploadDataProviders$FileUploadProvider;">
+      <method abstract="false" deprecated="not deprecated" final="false" name="getLength" jni-signature="()J" bridge="false" native="false" return="long" jni-return="J" static="false" synchronized="false" synthetic="false" visibility="public">
+        <exception name="IOException" type="java.io.IOException">
+        </exception>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="read" jni-signature="(Lorg/chromium/net/UploadDataSink;Ljava/nio/ByteBuffer;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="uploadDataSink" type="org.chromium.net.UploadDataSink" jni-type="Lorg/chromium/net/UploadDataSink;">
+        </parameter>
+        <parameter name="byteBuffer" type="java.nio.ByteBuffer" jni-type="Ljava/nio/ByteBuffer;">
+        </parameter>
+        <exception name="IOException" type="java.io.IOException">
+        </exception>
+      </method>
+      <method abstract="false" deprecated="not deprecated" final="false" name="rewind" jni-signature="(Lorg/chromium/net/UploadDataSink;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="uploadDataSink" type="org.chromium.net.UploadDataSink" jni-type="Lorg/chromium/net/UploadDataSink;">
+        </parameter>
+        <exception name="IOException" type="java.io.IOException">
+        </exception>
+      </method>
+    </class>
+    <class abstract="true" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="UploadDataSink" static="false" visibility="public" jni-signature="Lorg/chromium/net/UploadDataSink;">
+      <constructor deprecated="not deprecated" final="false" name="UploadDataSink" jni-signature="()V" bridge="false" static="false" type="org.chromium.net.UploadDataSink" synthetic="false" visibility="public">
+      </constructor>
+      <method abstract="true" deprecated="not deprecated" final="false" name="onReadError" jni-signature="(Ljava/lang/Exception;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="java.lang.Exception" jni-type="Ljava/lang/Exception;">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="onReadSucceeded" jni-signature="(Z)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="boolean" jni-type="Z">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="onRewindError" jni-signature="(Ljava/lang/Exception;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="java.lang.Exception" jni-type="Ljava/lang/Exception;">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="onRewindSucceeded" jni-signature="()V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+    </class>
+    <class abstract="true" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="UrlRequest" static="false" visibility="public" jni-signature="Lorg/chromium/net/UrlRequest;">
+      <constructor deprecated="not deprecated" final="false" name="UrlRequest" jni-signature="()V" bridge="false" static="false" type="org.chromium.net.UrlRequest" synthetic="false" visibility="public">
+      </constructor>
+      <method abstract="true" deprecated="not deprecated" final="false" name="cancel" jni-signature="()V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="followRedirect" jni-signature="()V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getStatus" jni-signature="(Lorg/chromium/net/UrlRequest$StatusListener;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="org.chromium.net.UrlRequest.StatusListener" jni-type="Lorg/chromium/net/UrlRequest$StatusListener;">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="isDone" jni-signature="()Z" bridge="false" native="false" return="boolean" jni-return="Z" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="read" jni-signature="(Ljava/nio/ByteBuffer;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="java.nio.ByteBuffer" jni-type="Ljava/nio/ByteBuffer;">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="start" jni-signature="()V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+    </class>
+    <class abstract="true" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="UrlRequest.Builder" static="true" visibility="public" jni-signature="Lorg/chromium/net/UrlRequest$Builder;">
+      <constructor deprecated="not deprecated" final="false" name="UrlRequest.Builder" jni-signature="()V" bridge="false" static="false" type="org.chromium.net.UrlRequest.Builder" synthetic="false" visibility="public">
+      </constructor>
+      <method abstract="true" deprecated="not deprecated" final="false" name="addHeader" jni-signature="(Ljava/lang/String;Ljava/lang/String;)Lorg/chromium/net/UrlRequest$Builder;" bridge="false" native="false" return="org.chromium.net.UrlRequest.Builder" jni-return="Lorg/chromium/net/UrlRequest$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="java.lang.String" jni-type="Ljava/lang/String;">
+        </parameter>
+        <parameter name="p1" type="java.lang.String" jni-type="Ljava/lang/String;">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="allowDirectExecutor" jni-signature="()Lorg/chromium/net/UrlRequest$Builder;" bridge="false" native="false" return="org.chromium.net.UrlRequest.Builder" jni-return="Lorg/chromium/net/UrlRequest$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="build" jni-signature="()Lorg/chromium/net/UrlRequest;" bridge="false" native="false" return="org.chromium.net.UrlRequest" jni-return="Lorg/chromium/net/UrlRequest;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="disableCache" jni-signature="()Lorg/chromium/net/UrlRequest$Builder;" bridge="false" native="false" return="org.chromium.net.UrlRequest.Builder" jni-return="Lorg/chromium/net/UrlRequest$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="setHttpMethod" jni-signature="(Ljava/lang/String;)Lorg/chromium/net/UrlRequest$Builder;" bridge="false" native="false" return="org.chromium.net.UrlRequest.Builder" jni-return="Lorg/chromium/net/UrlRequest$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="java.lang.String" jni-type="Ljava/lang/String;">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="setPriority" jni-signature="(I)Lorg/chromium/net/UrlRequest$Builder;" bridge="false" native="false" return="org.chromium.net.UrlRequest.Builder" jni-return="Lorg/chromium/net/UrlRequest$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="int" jni-type="I">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="setUploadDataProvider" jni-signature="(Lorg/chromium/net/UploadDataProvider;Ljava/util/concurrent/Executor;)Lorg/chromium/net/UrlRequest$Builder;" bridge="false" native="false" return="org.chromium.net.UrlRequest.Builder" jni-return="Lorg/chromium/net/UrlRequest$Builder;" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="org.chromium.net.UploadDataProvider" jni-type="Lorg/chromium/net/UploadDataProvider;">
+        </parameter>
+        <parameter name="p1" type="java.util.concurrent.Executor" jni-type="Ljava/util/concurrent/Executor;">
+        </parameter>
+      </method>
+      <field deprecated="not deprecated" final="true" name="REQUEST_PRIORITY_HIGHEST" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="4" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="REQUEST_PRIORITY_IDLE" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="0" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="REQUEST_PRIORITY_LOW" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="2" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="REQUEST_PRIORITY_LOWEST" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="1" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="REQUEST_PRIORITY_MEDIUM" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="3" visibility="public" volatile="false">
+      </field>
+    </class>
+    <class abstract="true" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="UrlRequest.Callback" static="true" visibility="public" jni-signature="Lorg/chromium/net/UrlRequest$Callback;">
+      <constructor deprecated="not deprecated" final="false" name="UrlRequest.Callback" jni-signature="()V" bridge="false" static="false" type="org.chromium.net.UrlRequest.Callback" synthetic="false" visibility="public">
+      </constructor>
+      <method abstract="false" deprecated="not deprecated" final="false" name="onCanceled" jni-signature="(Lorg/chromium/net/UrlRequest;Lorg/chromium/net/UrlResponseInfo;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="request" type="org.chromium.net.UrlRequest" jni-type="Lorg/chromium/net/UrlRequest;">
+        </parameter>
+        <parameter name="info" type="org.chromium.net.UrlResponseInfo" jni-type="Lorg/chromium/net/UrlResponseInfo;">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="onFailed" jni-signature="(Lorg/chromium/net/UrlRequest;Lorg/chromium/net/UrlResponseInfo;Lorg/chromium/net/CronetException;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="org.chromium.net.UrlRequest" jni-type="Lorg/chromium/net/UrlRequest;">
+        </parameter>
+        <parameter name="p1" type="org.chromium.net.UrlResponseInfo" jni-type="Lorg/chromium/net/UrlResponseInfo;">
+        </parameter>
+        <parameter name="p2" type="org.chromium.net.CronetException" jni-type="Lorg/chromium/net/CronetException;">
+        </parameter>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="onReadCompleted" jni-signature="(Lorg/chromium/net/UrlRequest;Lorg/chromium/net/UrlResponseInfo;Ljava/nio/ByteBuffer;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="org.chromium.net.UrlRequest" jni-type="Lorg/chromium/net/UrlRequest;">
+        </parameter>
+        <parameter name="p1" type="org.chromium.net.UrlResponseInfo" jni-type="Lorg/chromium/net/UrlResponseInfo;">
+        </parameter>
+        <parameter name="p2" type="java.nio.ByteBuffer" jni-type="Ljava/nio/ByteBuffer;">
+        </parameter>
+        <exception name="Exception" type="java.lang.Exception">
+        </exception>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="onRedirectReceived" jni-signature="(Lorg/chromium/net/UrlRequest;Lorg/chromium/net/UrlResponseInfo;Ljava/lang/String;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="org.chromium.net.UrlRequest" jni-type="Lorg/chromium/net/UrlRequest;">
+        </parameter>
+        <parameter name="p1" type="org.chromium.net.UrlResponseInfo" jni-type="Lorg/chromium/net/UrlResponseInfo;">
+        </parameter>
+        <parameter name="p2" type="java.lang.String" jni-type="Ljava/lang/String;">
+        </parameter>
+        <exception name="Exception" type="java.lang.Exception">
+        </exception>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="onResponseStarted" jni-signature="(Lorg/chromium/net/UrlRequest;Lorg/chromium/net/UrlResponseInfo;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="org.chromium.net.UrlRequest" jni-type="Lorg/chromium/net/UrlRequest;">
+        </parameter>
+        <parameter name="p1" type="org.chromium.net.UrlResponseInfo" jni-type="Lorg/chromium/net/UrlResponseInfo;">
+        </parameter>
+        <exception name="Exception" type="java.lang.Exception">
+        </exception>
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="onSucceeded" jni-signature="(Lorg/chromium/net/UrlRequest;Lorg/chromium/net/UrlResponseInfo;)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="org.chromium.net.UrlRequest" jni-type="Lorg/chromium/net/UrlRequest;">
+        </parameter>
+        <parameter name="p1" type="org.chromium.net.UrlResponseInfo" jni-type="Lorg/chromium/net/UrlResponseInfo;">
+        </parameter>
+      </method>
+    </class>
+    <class abstract="false" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="UrlRequest.Status" static="true" visibility="public" jni-signature="Lorg/chromium/net/UrlRequest$Status;">
+      <field deprecated="not deprecated" final="true" name="CONNECTING" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="10" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="DOWNLOADING_PAC_FILE" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="5" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="ESTABLISHING_PROXY_TUNNEL" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="8" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="IDLE" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="0" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="INVALID" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="-1" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="READING_RESPONSE" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="14" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="RESOLVING_HOST" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="9" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="RESOLVING_HOST_IN_PAC_FILE" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="7" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="RESOLVING_PROXY_FOR_URL" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="6" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="SENDING_REQUEST" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="12" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="SSL_HANDSHAKE" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="11" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="WAITING_FOR_AVAILABLE_SOCKET" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="2" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="WAITING_FOR_CACHE" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="4" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="WAITING_FOR_DELEGATE" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="3" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="WAITING_FOR_RESPONSE" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="13" visibility="public" volatile="false">
+      </field>
+      <field deprecated="not deprecated" final="true" name="WAITING_FOR_STALLED_SOCKET_POOL" jni-signature="I" static="true" transient="false" type="int" type-generic-aware="int" value="1" visibility="public" volatile="false">
+      </field>
+    </class>
+    <class abstract="true" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="UrlRequest.StatusListener" static="true" visibility="public" jni-signature="Lorg/chromium/net/UrlRequest$StatusListener;">
+      <constructor deprecated="not deprecated" final="false" name="UrlRequest.StatusListener" jni-signature="()V" bridge="false" static="false" type="org.chromium.net.UrlRequest.StatusListener" synthetic="false" visibility="public">
+      </constructor>
+      <method abstract="true" deprecated="not deprecated" final="false" name="onStatus" jni-signature="(I)V" bridge="false" native="false" return="void" jni-return="V" static="false" synchronized="false" synthetic="false" visibility="public">
+        <parameter name="p0" type="int" jni-type="I">
+        </parameter>
+      </method>
+    </class>
+    <class abstract="true" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="UrlResponseInfo" static="false" visibility="public" jni-signature="Lorg/chromium/net/UrlResponseInfo;">
+      <constructor deprecated="not deprecated" final="false" name="UrlResponseInfo" jni-signature="()V" bridge="false" static="false" type="org.chromium.net.UrlResponseInfo" synthetic="false" visibility="public">
+      </constructor>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getAllHeaders" jni-signature="()Ljava/util/Map;" bridge="false" native="false" return="java.util.Map&lt;java.lang.String, java.util.List&lt;java.lang.String&gt;&gt;" jni-return="Ljava/util/Map&lt;Ljava/lang/String;Ljava/util/List&lt;Ljava/lang/String;&gt;;&gt;;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getAllHeadersAsList" jni-signature="()Ljava/util/List;" bridge="false" native="false" return="java.util.List&lt;java.util.Map.Entry&lt;java.lang.String, java.lang.String&gt;&gt;" jni-return="Ljava/util/List&lt;Ljava/util/Map$Entry&lt;Ljava/lang/String;Ljava/lang/String;&gt;;&gt;;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getHttpStatusCode" jni-signature="()I" bridge="false" native="false" return="int" jni-return="I" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getHttpStatusText" jni-signature="()Ljava/lang/String;" bridge="false" native="false" return="java.lang.String" jni-return="Ljava/lang/String;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getNegotiatedProtocol" jni-signature="()Ljava/lang/String;" bridge="false" native="false" return="java.lang.String" jni-return="Ljava/lang/String;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getProxyServer" jni-signature="()Ljava/lang/String;" bridge="false" native="false" return="java.lang.String" jni-return="Ljava/lang/String;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getReceivedByteCount" jni-signature="()J" bridge="false" native="false" return="long" jni-return="J" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getUrl" jni-signature="()Ljava/lang/String;" bridge="false" native="false" return="java.lang.String" jni-return="Ljava/lang/String;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getUrlChain" jni-signature="()Ljava/util/List;" bridge="false" native="false" return="java.util.List&lt;java.lang.String&gt;" jni-return="Ljava/util/List&lt;Ljava/lang/String;&gt;;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="wasCached" jni-signature="()Z" bridge="false" native="false" return="boolean" jni-return="Z" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+    </class>
+    <class abstract="true" deprecated="not deprecated" extends="java.lang.Object" extends-generic-aware="java.lang.Object" jni-extends="Ljava/lang/Object;" final="false" name="UrlResponseInfo.HeaderBlock" static="true" visibility="public" jni-signature="Lorg/chromium/net/UrlResponseInfo$HeaderBlock;">
+      <constructor deprecated="not deprecated" final="false" name="UrlResponseInfo.HeaderBlock" jni-signature="()V" bridge="false" static="false" type="org.chromium.net.UrlResponseInfo.HeaderBlock" synthetic="false" visibility="public">
+      </constructor>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getAsList" jni-signature="()Ljava/util/List;" bridge="false" native="false" return="java.util.List&lt;java.util.Map.Entry&lt;java.lang.String, java.lang.String&gt;&gt;" jni-return="Ljava/util/List&lt;Ljava/util/Map$Entry&lt;Ljava/lang/String;Ljava/lang/String;&gt;;&gt;;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+      <method abstract="true" deprecated="not deprecated" final="false" name="getAsMap" jni-signature="()Ljava/util/Map;" bridge="false" native="false" return="java.util.Map&lt;java.lang.String, java.util.List&lt;java.lang.String&gt;&gt;" jni-return="Ljava/util/Map&lt;Ljava/lang/String;Ljava/util/List&lt;Ljava/lang/String;&gt;;&gt;;" static="false" synchronized="false" synthetic="false" visibility="public">
+      </method>
+    </class>
+  </package>
+</api>
