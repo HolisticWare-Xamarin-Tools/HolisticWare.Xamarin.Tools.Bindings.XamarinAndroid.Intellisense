@@ -17,7 +17,7 @@
         <!-- 
         put the package output into a nuget test folder 
         -->
-        <PackageOutputPath>$(HOME)/nuget-local</PackageOutputPath>
+        <PackageOutputPath>../../output</PackageOutputPath>
         
         <!-- 
         nuget packaging
